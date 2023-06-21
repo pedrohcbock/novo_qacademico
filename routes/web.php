@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlunosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/login', function (){
     return view('login');
 });
+Route::get('/alunos/add', [AlunosController::class, 'add'])->name('alunos.add');
+Route::post('/alunos/add', [AlunosController::class, 'addSave'])->name('alunos.addSave');

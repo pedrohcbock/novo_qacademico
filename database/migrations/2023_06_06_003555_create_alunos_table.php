@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('email');
             $table->string('cpf');
             $table->string('senha');
-            $table->date('datanasc');
+            $table->date('dataNasc');
             $table->string('foto');
-            $table->string('nomepai');
-            $table->string('nomemae');
-            $table->integer('matricula');
+            $table->string('nomePai');
+            $table->string('nomeMae');
+            $table->string('matricula');
             $table->string('telefone');
             $table->boolean('sexo');
             $table->foreignId('idCurso')->constrained('cursos');
