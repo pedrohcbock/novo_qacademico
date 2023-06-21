@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\ProfessoresController;
 use App\Http\Controllers\AdminsController;
-
+use App\Http\Controllers\CursosController;
+use App\Http\Controllers\NotasController;
+use App\Http\Controllers\MateriasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +33,13 @@ Route::post('/professores/add', [ProfessoresController::class, 'addSave'])->name
 //Admins
 Route::get('/admins/add', [AdminsController::class, 'add'])->name('admins.add');
 Route::post('/admins/add', [AdminsController::class, 'addSave'])->name('admins.addSave');
+
+Route::get('/cursos/add', [CursosController::class, 'add'])->name('cursos.add');
+Route::post('/cursos/add', [CursosController::class, 'addSave'])->name('cursos.addSave');
+
+Route::get('/materias/add', [MateriasController::class, 'add'])->name('materias.add');
+Route::post('/materias/add', [MateriasController::class, 'addSave'])->name('materias.addSave');
+
+
+Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
+Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
