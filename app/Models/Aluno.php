@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aluno extends Model
 {
+    protected $table = 'alunos';
+    public $timestamps = false;
     use HasFactory;
 
     protected $fillable = [

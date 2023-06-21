@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\ProfessoresController;
+use App\Http\Controllers\AdminsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function (){
-    return view('login');
-});
+//Alunos
 Route::get('/alunos/add', [AlunosController::class, 'add'])->name('alunos.add');
 Route::post('/alunos/add', [AlunosController::class, 'addSave'])->name('alunos.addSave');
 
+//Professores
 Route::get('/professores/add', [ProfessoresController::class, 'add'])->name('professores.add');
 Route::post('/professores/add', [ProfessoresController::class, 'addSave'])->name('professores.addSave');
+
+//Admins
+Route::get('/admins/add', [AdminsController::class, 'add'])->name('admins.add');
+Route::post('/admins/add', [AdminsController::class, 'addSave'])->name('admins.addSave');

@@ -7,7 +7,7 @@
 
     @if ($errors)
         @foreach ($errors->all() as $err)
-            {{ $err }}</br>
+            {{ $err }}<br>
         @endforeach
     @endif
 
@@ -39,14 +39,10 @@
             <option value="1">Homem</option>
         </select>
         <br>
-        <label for="Turma">Turma:</label>
-        <select id="Turma" name="idTurma">
-            <option value="0">Mulher</option>
-            <option value="1">Homem</option>
-        </select>
+        <input type="number" name="idTurma" placeholder="Turma do Aluno">
         <br>
         <input type="number" name="idCurso" placeholder="Curso do Aluno">
-        <hr width="30%" align="left">
+        <br>
         <input type="submit" value="Adiconar Produto">
     </form>
 

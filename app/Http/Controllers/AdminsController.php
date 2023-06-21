@@ -3,23 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Professor;
+use App\Models\Admin;
 
-class ProfessoresController extends Controller
+class AdminsController extends Controller
 {
     public function add(){
-        return view('professores.add');
+        return view('admins.add');
     }
     public function addSave(Request $form)
     {
-
         $dados = $form->validate([
             'nome' => 'required',
             'email' => 'required',
             'senha' => 'required',
-            'idMateria' => 'required',
         ]);
-        Professor::create($dados);
+        Admin::create($dados);
         return redirect()->route('professores.add');
     }
 }
