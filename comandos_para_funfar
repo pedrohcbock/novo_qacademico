@@ -3,3 +3,6 @@ copy .env.example .env
 php artisan key:generate
 php artisan migrate --seed
 php artisan serve
+
+OBS:tem que mudar na opção providers e colocar a model do usuario pra poder fazer o login funcionar, quem for fazer o login lembra disso, só precisa fazer uma vez. Após fazer tira o a OBS daqui
+
