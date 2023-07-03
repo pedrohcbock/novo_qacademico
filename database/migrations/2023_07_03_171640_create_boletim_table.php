@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('boletim', function (Blueprint $table) {
             $table->id();
             $table->foreignId('idMateria')->constrained('materias');
-            $table->foreignId('idNota')->constrained('nota');
+            $table->foreignId('idNota')->constrained('notas');
         });
     }
 
