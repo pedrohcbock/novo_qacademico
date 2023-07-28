@@ -15,7 +15,7 @@
         @csrf
         <input type="text" name="curso" placeholder="Nome do curso">
         <br>
-        
+
         <input type="submit" value="Adiconar Produto">
     </form>
 

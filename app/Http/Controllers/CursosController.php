@@ -15,7 +15,7 @@ class CursosController extends Controller
 
         $dados = $form->validate([
             'curso' => 'required',
-            
+
         ]);
         Curso::create($dados);
         return redirect()->route('cursos.add');
