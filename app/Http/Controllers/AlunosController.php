@@ -9,7 +9,6 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 
 
-
 class AlunosController extends Controller
 {
     public function add()
@@ -50,7 +49,7 @@ class AlunosController extends Controller
     }
     public function alterSave()
     {
-        
+
 
     }
 
@@ -63,6 +62,7 @@ class AlunosController extends Controller
             ]);
 
             if (Auth::attempt($dados)) {
+
                 return redirect()->intended('alunos.add');
             } else {
                 return redirect()->route('login')->with('erro', 'Credenciais inválidas.');
