@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('email');
             $table->string('cpf');
-            $table->string('senha');
+            $table->string('password');
             $table->date('dataNasc');
             $table->string('foto');
             $table->string('nomePai');

@@ -13,6 +13,6 @@ class Admin extends Model
     protected $fillable = [
         'nome',
         'email',
-        'senha',
+        'password',
     ];
 }

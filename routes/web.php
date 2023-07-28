@@ -53,3 +53,8 @@ Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.a
 
 Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
 Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
+
+
+Route::get('/alunos/login', [AlunosController::class, 'login'])->name('login');
+Route::post('/alunos/login', [AlunosController::class, 'login'])->name('login');
+Route::get('logout', [AlunosController::class, 'logout'])->name('logout');
