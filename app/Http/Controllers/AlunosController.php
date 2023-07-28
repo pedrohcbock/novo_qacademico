@@ -47,7 +47,7 @@ class AlunosController extends Controller
     {
         return view('alunos.senha');
     }
-    public function alterSave()
+    public function alterSave(Request $request)
     {
 
 
