@@ -22,4 +22,12 @@ class ProfessoresController extends Controller
         Professor::create($dados);
         return redirect()->route('professores.add');
     }
+    public function alter()
+    {
+        return view('professores.senha');
+    }
+    public function alterSave()
+    {
+
+    }
 }

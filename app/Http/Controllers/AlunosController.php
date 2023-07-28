@@ -32,4 +32,12 @@ class AlunosController extends Controller
         Aluno::create($dados);
         return redirect()->route('alunos.add');
     }
+    public function alter()
+    {
+        return view('alunos.senha');
+    }
+    public function alterSave()
+    {
+
+    }
 }

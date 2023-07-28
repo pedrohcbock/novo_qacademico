@@ -26,9 +26,15 @@ Route::get('/', function () {
 Route::get('/alunos/add', [AlunosController::class, 'add'])->name('alunos.add');
 Route::post('/alunos/add', [AlunosController::class, 'addSave'])->name('alunos.addSave');
 
+Route::get('/alunos/senha', [AlunosController::class, 'alter'])->name('alunos.alter');
+Route::post('/alunos/senha', [AlunosController::class, 'alterSave'])->name('alunos.alterSave');
+
 //Professores
 Route::get('/professores/add', [ProfessoresController::class, 'add'])->name('professores.add');
 Route::post('/professores/add', [ProfessoresController::class, 'addSave'])->name('professores.addSave');
+
+Route::get('/professores/senha', [AlunosController::class, 'alter'])->name('professores.alter');
+Route::post('/professores/senha', [AlunosController::class, 'alterSave'])->name('professores.alterSave');
 
 //Admins
 Route::get('/admins/add', [AdminsController::class, 'add'])->name('admins.add');
