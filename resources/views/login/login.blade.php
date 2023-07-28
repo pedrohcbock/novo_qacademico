@@ -38,7 +38,7 @@
                     <label for="">Senha</label>
                 </div>
                 <div class="forgot-pass">
-                    <a href="#">Esqueci minha senha?</a>
+                    <a href="{{ route('alunos.alter') }}">Esqueci minha senha?</a>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
 
@@ -60,11 +60,11 @@
                     <label for="">Senha</label>
                 </div>
                 <div class="forgot-pass">
-                    <a href="#">Esqueci minha senha?</a>
+                    <a href="{{ route('professores.alter') }}">Esqueci minha senha?</a>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
                 <div class="sign-link">
-                    <p> <a href="#" class="signUp-link"> Responsável | Aluno</a></p>
+                    <p> <a href="# " class="signUp-link"> Responsável | Aluno</a></p>
                 </div>
             </form>
         </div>
