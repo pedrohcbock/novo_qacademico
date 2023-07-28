@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\MateriasController;
+use App\Http\Controllers\TurmasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +46,9 @@ Route::post('/cursos/add', [CursosController::class, 'addSave'])->name('cursos.a
 
 Route::get('/materias/add', [MateriasController::class, 'add'])->name('materias.add');
 Route::post('/materias/add', [MateriasController::class, 'addSave'])->name('materias.addSave');
+
+Route::get('/turmas/add', [TurmasController::class, 'add'])->name('turmas.add');
+Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
 
 
 Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
