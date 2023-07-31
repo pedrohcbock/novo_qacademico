@@ -12,9 +12,9 @@
     <h1>Login!!!!!</h1>
     <form action="{{ url()->current() }}" method="post">
         @csrf
-        <input type="number" name="cpf" placeholder="Insria seu cpf">
+        <input type="number" name="cpf" placeholder="Insria seu cpf" required>
         <br>
-        <input type="password" name="password" placeholder="Insira sua senha">
+        <input type="password" name="password" placeholder="Insira sua senha" required>
         <br>
         <input type="submit" value="Logar">
     </form>

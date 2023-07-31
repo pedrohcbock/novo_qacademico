@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 
 class AlunosController extends Controller
@@ -53,6 +54,40 @@ class AlunosController extends Controller
 
     }
 
+    public function edit(Aluno $aluno)
+    {
+        return view('alunos.add', [
+            'aluno' => $aluno,
+        ]);
+    }
+
+    public function editSave(Request $form, Aluno $aluno)
+    {
+        $dados = $form->validate([
+            'nome' => [
+                'required',
+                Rule::unique('alunos')->ignore($aluno->id),
+                'min:3',
+            ],
+            'email' => 'required',
+            'dataNasc' => 'required',
+            'telefone' => 'required',
+            'nomePai' => 'required',
+            'nomeMae' => 'required',
+            'foto' => 'required',
+            'sexo' => 'required',
+        ]);
+
+        // Remova a regra de validação de password se você não deseja atualizá-la no formulário
+        unset($dados['password']);
+
+        // Atualize os dados do aluno com os novos dados validados
+        $aluno->fill($dados);
+        $aluno->save();
+
+        return redirect()->route('alunos.add')->with('sucesso', 'Usuário alterado com sucesso');
+    }
+
     public function login(Request $request)
     {
         if ($request->isMethod('POST')) {
@@ -63,7 +98,7 @@ class AlunosController extends Controller
 
             if (Auth::attempt($dados)) {
 
-                return redirect()->intended('alunos.add');
+                return redirect()->route('alunos.add');
             } else {
                 return redirect()->route('login')->with('erro', 'Credenciais inválidas.');
             }
@@ -78,4 +113,3 @@ class AlunosController extends Controller
         return redirect()->route('professores.add');
     }
 }
-

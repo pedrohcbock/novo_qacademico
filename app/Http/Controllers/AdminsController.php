@@ -10,7 +10,8 @@ class AdminsController extends Controller
     public function add_geral(){
         return view('admins.add_geral');
     }
-    public function add(){
+    public function add()
+    {
         return view('admins.add');
     }
     public function addSave(Request $form)
@@ -22,5 +23,15 @@ class AdminsController extends Controller
         ]);
         Admin::create($dados);
         return redirect()->route('professores.add');
+    }
+
+    public function alter()
+    {
+        return view('admins.senha');
+    }
+    public function alterSave(Request $request)
+    {
+
+
     }
 }
