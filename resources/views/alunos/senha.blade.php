@@ -17,12 +17,12 @@
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="senha" required>
+                        <input type="password" name="password" required>
                         <label for="">Senha Antiga</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="novaSenha" required>
+                        <input type="password" name="newPassword" required>
                         <label for="">Nova Senha</label>
                     </div>
                     <button>Logar</button>

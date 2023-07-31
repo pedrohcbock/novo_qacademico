@@ -15,7 +15,7 @@ class AdminsController extends Controller
         $dados = $form->validate([
             'nome' => 'required',
             'email' => 'required',
-            'senha' => 'required',
+            'password' => 'required',
         ]);
         Admin::create($dados);
         return redirect()->route('professores.add');

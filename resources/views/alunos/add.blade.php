@@ -19,7 +19,7 @@
         <br>
         <input type="number" name="cpf" placeholder="CPF do Aluno">
         <br>
-        <input type="number" name="senha" placeholder="Senha do Aluno">
+        <input type="number" name="password" placeholder="Senha do Aluno">
         <br>
         <input type="date" name="dataNasc" placeholder="Data de Nascimento do Aluno">
         <br>

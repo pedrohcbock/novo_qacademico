@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('login/login');
 });
 
-//Alunos
+//Alunosgit
 Route::get('/alunos/add', [AlunosController::class, 'add'])->name('alunos.add');
 Route::post('/alunos/add', [AlunosController::class, 'addSave'])->name('alunos.addSave');
 
@@ -49,7 +49,6 @@ Route::post('/materias/add', [MateriasController::class, 'addSave'])->name('mate
 
 Route::get('/turmas/add', [TurmasController::class, 'add'])->name('turmas.add');
 Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
-
 
 Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
 Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
