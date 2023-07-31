@@ -53,3 +53,5 @@ Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addS
 Route::get('/alunos/login', [AlunosController::class, 'login'])->name('login');
 Route::post('/alunos/login', [AlunosController::class, 'login'])->name('login');
 Route::get('logout', [AlunosController::class, 'logout'])->name('logout');
+
+Route::get('/admins/novo', [AdminsController::class, 'add_geral'])->name('admins.add_geral');
