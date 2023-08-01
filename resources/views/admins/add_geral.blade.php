@@ -33,14 +33,14 @@
             </div>
             <div class="pages">
                 <div class="page active">
-                    <h1>Let's get started</h1>
+                    <h1>Cadastro de aluno</h1>
                     <div class="field">
                         <div class="field-input">
                             <label for="email"><span>*</span>Email</label>
                             <input type="email" id="email" placeholder="e.g. sample@email.com">
                         </div>
                         <div class="field-input">
-                            <label for="uname"><span>*</span>Username</label>
+                            <label for="uname"><span>*</span>Nome</label>
                             <input type="text" id="uname" placeholder="e.g. gab613">
                         </div>
                     </div>
@@ -51,22 +51,42 @@
                     </div>
                 </div>
                 <div class="page">
-                    <h1>Add a personal touch</h1>
+                    <h1>Dados pessoais do aluno</h1>
                     <div class="field">
                         <div class="field-input">
                             <div class="field-group">
                                 <div class="fname-input">
-                                    <label for="fname"><span>*</span>First Name</label>
+                                    <label for="fname"><span>*</span>CPF</label>
                                     <input type="text" id="fname" placeholder="e.g. John">
                                 </div>
                                 <div class="lname-input">
-                                    <label for="fname"><span>*</span>Last Name</label>
-                                    <input type="text" id="fname" placeholder="e.g. Doe">
+                                    <label for="fname"><span>*</span>Matricula do Aluno</label>
+                                    <input type="password" id="fname" placeholder="e.g. Doe">
                                 </div>
+                            </div>
+                            <div class="field-group">
+                                <div class="fname-input">
+                                    <label for="fname"><span>*</span>Telefone</label>
+                                    <input type="text" id="fname" placeholder="e.g. John">
+                                </div>
+                                <div class="lname-input">
+                                    <label for="fname"><span>*</span>Foto</label>
+                                    <input type="file" id="fname" placeholder="e.g. Doe">
+                                </div>
+                            </div>
+                            <div class="field-input">
+                                <label for="password"><span>*</span>Nome do Pai</label>
+                                <input type="text" id="password" placeholder="Password">
+                                <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
+                            </div>
+                            <div class="field-input">
+                                <label for="password"><span>*</span>Nome da mãe</label>
+                                <input type="text" id="password" placeholder="Password">
+                                <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                             </div>
                         </div>
                         <div class="field-input">
-                            <label for="bdate"><span>*</span>Birthdate</label>
+                            <label for="bdate"><span>*</span>Data de Nascimento</label>
                             <input type="date" id="bdate">
                         </div>
                     </div>
@@ -80,15 +100,15 @@
                     </div>
                 </div>
                 <div class="page">
-                    <h1>Secure your account</h1>
+                    <h1>Segurança da conta</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="password"><span>*</span>Password</label>
+                            <label for="password"><span>*</span>Senha</label>
                             <input type="password" id="password" placeholder="Password">
                             <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                         </div>
                         <div class="field-input">
-                            <label for="confirmpass"><span>*</span>Confirm Password</label>
+                            <label for="confirmpass"><span>*</span>Confirmar Senha</label>
                             <input type="password" id="confirmpass" placeholder="Confirm Password">
                             <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                         </div>
