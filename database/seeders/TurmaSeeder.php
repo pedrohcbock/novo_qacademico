@@ -12,11 +12,11 @@ class TurmaSeeder extends Seeder
      */
     public function run(): void
     {
-        // DB::table('materias')->insert([
-        //     'turma' => 'Filosofia III',
-        //     'numeroAlunos' => 33,
-        //     'idMateria' => '',
-        //     'idCurso' => '',
-        // ]);
+        DB::table('turmas')->insert([
+            'turma' => '1º Informática',
+            'numeroAlunos' => 33,
+            'idMateria' => [1,4,7,10,13,16,19,22,25],
+            'idCurso' => 1,
+        ]);
     }
 }
