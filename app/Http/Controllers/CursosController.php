@@ -7,6 +7,9 @@ use App\Models\Curso;
 
 class CursosController extends Controller
 {
+    public function header(){
+        return view('includes.header');
+    }
     public function add(){
         return view('cursos.add');
     }

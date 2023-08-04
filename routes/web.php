@@ -60,6 +60,8 @@ Route::prefix('/admins')->middleware("auth")->group(function () {
     Route::post('senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
 });
 
+Route::get('/includes/header', [CursosController::class, 'header'])->name('includes.header');
+
 Route::get('/cursos/add', [CursosController::class, 'add'])->name('cursos.add');
 Route::post('/cursos/add', [CursosController::class, 'addSave'])->name('cursos.addSave');
 
