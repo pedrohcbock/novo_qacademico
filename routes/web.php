@@ -8,6 +8,7 @@ use App\Http\Controllers\CursosController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\MateriasController;
 use App\Http\Controllers\TurmasController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use App\Http\Controllers\TurmasController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::redirect('/', '/login');
 
 Route::get('/', function () {
     return view('welcome');
@@ -75,10 +77,7 @@ Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.a
 Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
 Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
 
-Route::get('/alunos/login', [AlunosController::class, 'login'])->name('login');
-
-Route::post('/alunos/login', [AlunosController::class, 'login'])->name('login');
-
-Route::get('logout', [AlunosController::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/admins/novo', [AdminsController::class, 'add_geral'])->name('admins.add_geral');
