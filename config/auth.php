@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admins' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'alunos' => [
+            'driver' => 'session',
+            'provider' => 'alunos',
+        ],
     ],
 
     /*
@@ -62,7 +70,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class, // Modelo comum para os atributos compartilhados entre os três tipos de usuário (opcional).
+            'model' => App\Models\User::class,
         ],
         'admins' => [
             'driver' => 'eloquent',
@@ -71,10 +79,6 @@ return [
         'alunos' => [
             'driver' => 'eloquent',
             'model' => App\Models\Aluno::class,
-        ],
-        'professores' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Professor::class,
         ],
 
         // 'users' => [

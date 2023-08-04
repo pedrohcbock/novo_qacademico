@@ -15,19 +15,18 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $dados = $request->validate([
-            'email' => 'required|email',
+            'cpf' => 'required',
             'password' => 'required',
         ]);
 
         if (Auth::guard('admins')->attempt($dados)) {
 
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('alunos.add');
+
         } elseif (Auth::guard('alunos')->attempt($dados)) {
 
-            return redirect()->route('aluno.dashboard');
-        } elseif (Auth::guard('professores')->attempt($dados)) {
+            return redirect()->route('alunos.add');
 
-            return redirect()->route('professor.dashboard');
         } else {
 
             return redirect()->route('login')->with('erro', 'Credenciais inválidas.');

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -27,14 +25,15 @@
 
     <div class="wrapper">
         <div class="form-wrapper sign-up">
-            <form action="">
+            <form action="{{ url()->current() }}" method="POST">
+                @csrf
                 <h2> Responsável <br> Aluno  </h2>
                 <div class="input-group">
-                    <input type="text" required>
+                    <input name="cpf" type="number" required>
                     <label for="">Usuário</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input name="password" type="password" required>
                     <label for="">Senha</label>
                 </div>
                 <div class="forgot-pass">
@@ -49,18 +48,19 @@
         </div>
 
         <div class="form-wrapper sign-in">
-            <form action="">
+            <form action="{{ url()->current() }}" method="POST">
+                @csrf
                 <h2>Auxiliar <br> Administrativo</h2>
                 <div class="input-group">
-                    <input type="text" required>
+                    <input name="cpf" type="number" required>
                     <label for="">Usuário</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input name="password" type="password" required>
                     <label for="">Senha</label>
                 </div>
                 <div class="forgot-pass">
-                    <a href="{{ route('professores.alter') }}">Esqueci minha senha?</a>
+                    <a href="{{ route('admins.alter') }}">Esqueci minha senha?</a>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
                 <div class="sign-link">
