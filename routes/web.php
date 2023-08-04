@@ -21,11 +21,6 @@ use App\Http\Controllers\LoginController;
 |
 */
 Route::redirect('/', '/login');
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
 //Alunos
 Route::prefix('/alunos')->middleware("auth")->group(function () {
     Route::get('add', [AlunosController::class, 'add'])->name('alunos.add');
