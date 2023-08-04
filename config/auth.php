@@ -62,7 +62,19 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+            'model' => App\Models\User::class, // Modelo comum para os atributos compartilhados entre os três tipos de usuário (opcional).
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'alunos' => [
+            'driver' => 'eloquent',
             'model' => App\Models\Aluno::class,
+        ],
+        'professores' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Professor::class,
         ],
 
         // 'users' => [
