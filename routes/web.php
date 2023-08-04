@@ -20,6 +20,10 @@ use App\Http\Controllers\TurmasController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
 //Alunos
 Route::prefix('/alunos')->middleware("auth")->group(function () {
     Route::get('add', [AlunosController::class, 'add'])->name('alunos.add');
