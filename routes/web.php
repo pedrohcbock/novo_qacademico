@@ -88,6 +88,6 @@ Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
 });
 
 //Login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');;
+Route::post('/login', [LoginController::class, 'login'])->middleware('guest');;
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
