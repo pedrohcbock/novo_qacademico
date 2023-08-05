@@ -60,22 +60,26 @@ Route::prefix('/admins')->middleware("auth")->group(function () {
     Route::post('senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
 });
 
+//Header
 Route::get('/includes/header', [CursosController::class, 'header'])->name('includes.header');
 
+//Cursos
 Route::get('/cursos/add', [CursosController::class, 'add'])->name('cursos.add');
 Route::post('/cursos/add', [CursosController::class, 'addSave'])->name('cursos.addSave');
 
+//Materias
 Route::get('/materias/add', [MateriasController::class, 'add'])->name('materias.add');
 Route::post('/materias/add', [MateriasController::class, 'addSave'])->name('materias.addSave');
 
+//Turmas
 Route::get('/turmas/add', [TurmasController::class, 'add'])->name('turmas.add');
 Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
 
-
+//Notas
 Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
 Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
 
+//Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-
-Route::get('/admins/novo', [AdminsController::class, 'add_geral'])->name('admins.add_geral');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

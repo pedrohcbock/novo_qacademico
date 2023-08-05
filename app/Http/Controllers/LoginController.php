@@ -14,23 +14,31 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $dados = $request->validate([
-            'cpf' => 'required',
-            'password' => 'required',
-        ]);
+        $credentials = $request->only('cpf', 'password');
 
-        if (Auth::guard('admins')->attempt($dados)) {
+        if (Auth::guard('aluno')->attempt($credentials)) {
 
-            return redirect()->route('alunos.add');
-
-        } elseif (Auth::guard('alunos')->attempt($dados)) {
-
-            return redirect()->route('alunos.add');
-
-        } else {
-
-            return redirect()->route('login')->with('erro', 'Credenciais inválidas.');
+            return redirect()->intended('/aluno/dashboard');
         }
+
+        // Tentar autenticar como Admin
+        if (Auth::guard('admin')->attempt($credentials)) {
+
+            return redirect()->intended('/admin/dashboard');
+        }
+
+        return redirect()->back()->withErrors(['login' => 'Credenciais inválidas']);
+    }
+
+    public function logout()
+    {
+        // Verificar qual guard está autenticado e realizar o logout
+        if (Auth::guard('aluno')->check()) {
+            Auth::guard('aluno')->logout();
+        } elseif (Auth::guard('admin')->check()) {
+            Auth::guard('admin')->logout();
+        }
+
+        return redirect('/login');
     }
 }
-

@@ -27,7 +27,7 @@
         <div class="form-wrapper sign-up">
             <form action="{{ url()->current() }}" method="POST">
                 @csrf
-                <h2> Responsável <br> Aluno  </h2>
+                <h2> Responsável <br> Aluno </h2>
                 <div class="input-group">
                     <input name="cpf" type="number" required>
                     <label for="">Usuário</label>
@@ -51,14 +51,17 @@
             <form action="{{ url()->current() }}" method="POST">
                 @csrf
                 <h2>Auxiliar <br> Administrativo</h2>
+                <p>@include('includes.errors')</p>
                 <div class="input-group">
                     <input name="cpf" type="number" required>
                     <label for="">Usuário</label>
                 </div>
+
                 <div class="input-group">
                     <input name="password" type="password" required>
                     <label for="">Senha</label>
                 </div>
+
                 <div class="forgot-pass">
                     <a href="{{ route('admins.alter') }}">Esqueci minha senha?</a>
                 </div>

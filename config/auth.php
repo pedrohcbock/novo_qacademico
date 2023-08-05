@@ -40,13 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admins' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
-        'alunos' => [
+
+        'aluno' => [
             'driver' => 'session',
             'provider' => 'alunos',
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
         ],
     ],
 
@@ -72,13 +74,15 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
+
         'alunos' => [
             'driver' => 'eloquent',
             'model' => App\Models\Aluno::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [
