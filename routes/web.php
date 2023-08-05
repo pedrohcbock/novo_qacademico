@@ -64,20 +64,28 @@ Route::prefix('/admins')->middleware("auth")->group(function () {
 Route::get('/includes/header', [CursosController::class, 'header'])->name('includes.header');
 
 //Cursos
-Route::get('/cursos/add', [CursosController::class, 'add'])->name('cursos.add');
-Route::post('/cursos/add', [CursosController::class, 'addSave'])->name('cursos.addSave');
+Route::prefix('/cursos')->middleware("auth")->group(function () {
+Route::get('aadd', [CursosController::class, 'add'])->name('cursos.add');
+Route::post('add', [CursosController::class, 'addSave'])->name('cursos.addSave');
+});
 
 //Materias
-Route::get('/materias/add', [MateriasController::class, 'add'])->name('materias.add');
-Route::post('/materias/add', [MateriasController::class, 'addSave'])->name('materias.addSave');
+Route::prefix('/materias')->middleware("auth")->group(function () {
+Route::get('add', [MateriasController::class, 'add'])->name('materias.add');
+Route::post('add', [MateriasController::class, 'addSave'])->name('materias.addSave');
+});
 
 //Turmas
-Route::get('/turmas/add', [TurmasController::class, 'add'])->name('turmas.add');
-Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
+Route::prefix('/turmas')->middleware("auth")->group(function () {
+Route::get('add', [TurmasController::class, 'add'])->name('turmas.add');
+Route::post('add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
+});
 
 //Notas
-Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
-Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
+Route::prefix('/notas')->middleware("auth")->group(function () {
+Route::get('add', [NotasController::class, 'add'])->name('notas.add');
+Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
+});
 
 //Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
