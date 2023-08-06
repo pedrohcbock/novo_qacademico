@@ -1,57 +1,135 @@
-@extends('includes.base')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi step form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/add.css">
+    <script src="../js/add.js" defer></script>
+</head>
+<body>
 
-@section('title', 'Adiconar - Aluno')
+    @if ($errors)
+    @foreach ($errors->all() as $err)
+    {{ $err }}<br>
+    @endforeach
+    @endif
 
-@section('content')
-<h2>Adicione o seu produto</h2>
-
-@if ($errors)
-@foreach ($errors->all() as $err)
-{{ $err }}<br>
-@endforeach
-@endif
-
-<form action="{{ url()->current() }}" method="post">
-    @csrf
-    <input type="text" name="nome" placeholder="Nome do Aluno" value="{{ old('nome', $aluno->nome ?? '') }}">
-    <br>
-    <input type="email" name="email" placeholder="Email do Aluno" value="{{ old('email', $aluno->email ?? '') }}">
-    <br>
-    <input type="number" name="cpf" placeholder="CPF do Aluno" value="{{ old('cpf', $aluno->cpf ?? '') }}" readonly>
-    <br>
-    <input type="password" name="password" placeholder="Senha do Aluno"
-        value="{{ old('password', $aluno->password ?? '') }}" readonly>
-    <br>
-    <input type="date" name="dataNasc" placeholder="Data de Nascimento do Aluno"
-        value="{{ old('dataNasc', $aluno->dataNasc ?? '') }}">
-    <br>
-    <input type="text" name="foto" placeholder="Foto do Aluno" value="{{ old('foto', $aluno->foto ?? '') }}" readonly>
-    <br>
-    <input type="text" name="nomePai" placeholder="Nome do Pai do Aluno"
-        value="{{ old('nomePai', $aluno->nomePai ?? '') }}">
-    <br>
-    <input type="text" name="nomeMae" placeholder="Nome da Mãe do Aluno"
-        value="{{ old('nomeMae', $aluno->nomeMae ?? '') }}">
-    <br>
-    <input type="number" name="matricula" placeholder="Matricula do Aluno"
-        value="{{ old('matricula', $aluno->matricula ?? '') }}" readonly>
-    <br>
-    <input type="number" name="telefone" placeholder="Telefone do Aluno"
-        value="{{ old('telefone', $aluno->telefone ?? '') }}">
-    <br>
-    <label for="sexo">Gênero:</label>
-    <select id="sexo" name="sexo" value="{{ old('sexo', $aluno->sexo ?? '') }}">
-        <option value="0">Mulher</option>
-        <option value="1">Homem</option>
-    </select>
-    <br>
-    <input type="number" name="idTurma" placeholder="Turma do Aluno" value="{{ old('idTurma', $aluno->idTurma ?? '') }}"
-        readonly>
-    <br>
-    <input type="number" name="idCurso" placeholder="Curso do Aluno" value="{{ old('idCurso', $aluno->idCurso ?? '') }}"
-        readonly>
-    <br>
-    <input type="submit" value="Adiconar Produto">
-</form>
-
-@endsection
+    <section id="signup">
+        <form action="{{ url()->current() }}" method="POST" class="form">
+            @csrf
+            <div class="progress">
+                <div class="progress-bar active current">
+                    <span>
+                        <img src="../imgs/email.svg" alt="">
+                    </span>
+                </div>
+                <div class="progress-bar">
+                    <span>
+                        <img src="../imgs/user.svg" alt="">
+                    </span>
+                </div>
+                <div class="progress-bar ">
+                    <span>
+                        <img src="../imgs/password.svg" alt="">
+                    </span>
+                </div>
+            </div>
+            <div class="pages">
+                <div class="page active">
+                    <h1>Cadastro de aluno</h1>
+                    <div class="field">
+                        <div class="field-input">
+                            <label for="email"><span>*</span>Email</label>
+                            <input value="{{ old('email', $aluno->email ?? '') }}" type="email" id="email" placeholder="aluno@gmail.com">
+                        </div>
+                        <div class="field-input">
+                            <label for="uname"><span>*</span>Nome</label>
+                            <input  value="{{ old('nome', $aluno->nome ?? '') }}" type="text" id="uname" placeholder="João da Silva">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="button" id="next-btn">
+                            <img src="../imgs/next.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="page">
+                    <h1>Dados pessoais do aluno</h1>
+                    <div class="field">
+                        <div class="field-input">
+                            <div class="field-group">
+                                <div class="fname-input">
+                                    <label for="fname"><span>*</span>CPF</label>
+                                    <input value="{{ old('cpf', $aluno->cpf ?? '') }}" readonly type="text" id="fname" >
+                                </div>
+                                <div class="lname-input">
+                                    <label for="fname"><span>*</span>Matricula do Aluno</label>
+                                    <input value="{{ old('matricula', $aluno->matricula ?? '') }}" type="password" id="fname" placeholder="1234567890">
+                                </div>
+                            </div>
+                            <div class="field-group">
+                                <div class="fname-input">
+                                    <label for="fname"><span>*</span>Telefone</label>
+                                    <input value="{{ old('telefone', $aluno->telefone ?? '') }}" type="text" id="fname" placeholder="(xx) xxxxx-xxxx">
+                                </div>
+                                <div class="lname-input">
+                                    <label for="fname"><span>*</span>Foto</label>
+                                    <input value="{{ old('foto', $aluno->foto ?? '') }}" type="file" id="fname" placeholder="e.g. Doe">
+                                </div>
+                            </div>
+                            <div class="field-input">
+                                <label for="password"><span>*</span>Nome do Pai</label>
+                                <input value="{{ old('nomePai', $aluno->nomePai ?? '') }}" type="text" id="password">
+                            </div>
+                            <div class="field-input">
+                                <label for="password"><span>*</span>Nome da Mãe</label>
+                                <input value="{{ old('nomeMae', $aluno->nomeMae ?? '') }}" type="text" id="password">
+                            </div>
+                        </div>
+                        <div class="field-input">
+                            <label for="bdate"><span>*</span>Data de Nascimento</label>
+                            <input value="{{ old('dataNasc', $aluno->dataNasc ?? '') }}" type="date" id="bdate">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="button" id="prev-btn">
+                            <img src="../imgs/prev.svg" alt="">
+                        </button>
+                        <button type="button" id="next-btn">
+                            <img src="../imgs/next.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="page">
+                    <h1>Segurança da conta</h1>
+                    <div class="field">
+                        <div class="field-input">
+                            <label for="password"><span>*</span>Senha</label>
+                            <input value="{{ old('password', $aluno->password ?? '') }}" type="password" id="password" placeholder="Password">
+                            <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
+                        </div>
+                        <div class="field-input">
+                            <label for="confirmpass"><span>*</span>Confirmar Senha</label>
+                            <input value="{{ old('password', $aluno->password ?? '') }}" type="password" id="confirmpass" placeholder="Confirm Password">
+                            <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="button" id="prev-btn">
+                            <img src="../imgs/prev.svg" alt="">
+                        </button>
+                        <button type="submit" id="submit-btn">
+                            Cadastrar aluno
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

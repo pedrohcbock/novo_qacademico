@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="itens">
-            <h1><div class="q">Q-ac</div>adêmico</h1>
+            <h1><div class="q">Q-aca</div>dêmico</h1>
             <nav>
 
             </nav>
@@ -20,7 +20,7 @@
 
     <section>
         <div class="form-box">
-           
+
         </div>
     </section>
 </body>

@@ -12,8 +12,16 @@
     <script src="../js/add.js" defer></script>
 </head>
 <body>
+
+    @if ($errors)
+    @foreach ($errors->all() as $err)
+    {{ $err }}<br>
+    @endforeach
+    @endif
+
     <section id="signup">
-        <form action="#" method="POST" class="form">
+        <form action="{{ url()->current() }}" method="POST" class="form">
+            @csrf
             <div class="progress">
                 <div class="progress-bar active current">
                     <span>
@@ -37,11 +45,11 @@
                     <div class="field">
                         <div class="field-input">
                             <label for="email"><span>*</span>Email</label>
-                            <input type="email" id="email" placeholder="e.g. sample@email.com">
+                            <input value="{{ old('email', $aluno->email ?? '') }}" type="email" id="email" placeholder="e.g. sample@email.com">
                         </div>
                         <div class="field-input">
                             <label for="uname"><span>*</span>Nome</label>
-                            <input type="text" id="uname" placeholder="e.g. gab613">
+                            <input  value="{{ old('nome', $aluno->nome ?? '') }}" type="text" id="uname" placeholder="e.g. gab613">
                         </div>
                     </div>
                     <div class="btn">
@@ -57,7 +65,7 @@
                             <div class="field-group">
                                 <div class="fname-input">
                                     <label for="fname"><span>*</span>CPF</label>
-                                    <input type="text" id="fname" placeholder="e.g. John">
+                                    <input value="{{ old('cpf', $aluno->cpf ?? '') }}" readonly type="text" id="fname" placeholder="e.g. John">
                                 </div>
                                 <div class="lname-input">
                                     <label for="fname"><span>*</span>Matricula do Aluno</label>
@@ -71,23 +79,23 @@
                                 </div>
                                 <div class="lname-input">
                                     <label for="fname"><span>*</span>Foto</label>
-                                    <input type="file" id="fname" placeholder="e.g. Doe">
+                                    <input value="{{ old('foto', $aluno->foto ?? '') }}"  type="file" id="fname" placeholder="e.g. Doe">
                                 </div>
                             </div>
                             <div class="field-input">
                                 <label for="password"><span>*</span>Nome do Pai</label>
-                                <input type="text" id="password" placeholder="Password">
+                                <input value="{{ old('nomePai', $aluno->nomePai ?? '') }}" type="text" id="password" placeholder="Password">
                                 <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                             </div>
                             <div class="field-input">
                                 <label for="password"><span>*</span>Nome da mãe</label>
-                                <input type="text" id="password" placeholder="Password">
+                                <input value="{{ old('nomeMae', $aluno->nomeMae ?? '') }}" type="text" id="password" placeholder="Password">
                                 <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                             </div>
                         </div>
                         <div class="field-input">
                             <label for="bdate"><span>*</span>Data de Nascimento</label>
-                            <input type="date" id="bdate">
+                            <input value="{{ old('dataNasc', $aluno->dataNasc ?? '') }}"> type="date" id="bdate">
                         </div>
                     </div>
                     <div class="btn">
@@ -104,12 +112,12 @@
                     <div class="field">
                         <div class="field-input">
                             <label for="password"><span>*</span>Senha</label>
-                            <input type="password" id="password" placeholder="Password">
+                            <input value="{{ old('password', $aluno->password ?? '') }}" type="password" id="password" placeholder="Password">
                             <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                         </div>
                         <div class="field-input">
                             <label for="confirmpass"><span>*</span>Confirmar Senha</label>
-                            <input type="password" id="confirmpass" placeholder="Confirm Password">
+                            <input value="{{ old('password', $aluno->password ?? '') }}" type="password" id="confirmpass" placeholder="Confirm Password">
                             <img class="show-hide-pass" src="../imgs/show-pass.svg" alt="">
                         </div>
                     </div>
@@ -118,7 +126,7 @@
                             <img src="../imgs/prev.svg" alt="">
                         </button>
                         <button type="submit" id="submit-btn">
-                            Sign up
+                            Cadastrar aluno
                         </button>
                     </div>
                 </div>
