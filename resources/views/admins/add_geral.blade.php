@@ -69,13 +69,13 @@
                                 </div>
                                 <div class="lname-input">
                                     <label for="fname"><span>*</span>Matricula do Aluno</label>
-                                    <input type="password" id="fname" placeholder="e.g. Doe">
+                                    <input value="{{ old('matricula', $aluno->matricula ?? '') }}" type="password" id="fname" placeholder="e.g. Doe">
                                 </div>
                             </div>
                             <div class="field-group">
                                 <div class="fname-input">
                                     <label for="fname"><span>*</span>Telefone</label>
-                                    <input type="text" id="fname" placeholder="e.g. John">
+                                    <input value="{{ old('telefone', $aluno->telefone ?? '') }}" type="text" id="fname" placeholder="e.g. John">
                                 </div>
                                 <div class="lname-input">
                                     <label for="fname"><span>*</span>Foto</label>
