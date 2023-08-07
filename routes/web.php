@@ -28,15 +28,15 @@ Route::prefix('/alunos')->middleware("auth")->group(function () {
 
     Route::post('add', [AlunosController::class, 'addSave'])->name('alunos.addSave');
 
-    Route::get('senha', [AlunosController::class, 'alter'])->name('alunos.alter');
-
-    Route::post('senha', [AlunosController::class, 'alterSave'])->name('alunos.alterSave');
 
     Route::get('edit/{aluno}', [AlunosController::class, 'edit'])->name('alunos.edit');
 
     Route::post('edit/{aluno}', [AlunosController::class, 'editSave'])->name('alunos.editSave');
 });
 
+Route::get('alunos/senha', [AlunosController::class, 'alter'])->name('alunos.alter');
+
+Route::post('alunos/senha', [AlunosController::class, 'alterSave'])->name('alunos.alterSave');
 
 //Professores
 Route::prefix('/professores')->middleware("auth")->group(function () {
@@ -55,10 +55,11 @@ Route::prefix('/admins')->middleware("auth")->group(function () {
 
     Route::post('add', [AdminsController::class, 'addSave'])->name('admins.addSave');
 
-    Route::get('senha', [AdminsController::class, 'alter'])->name('admins.alter');
-
-    Route::post('senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
 });
+
+Route::get('admins/senha', [AdminsController::class, 'alter'])->name('admins.alter');
+
+Route::post('admins/senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
 
 //Header
 Route::get('/includes/header', [CursosController::class, 'header'])->name('includes.header');

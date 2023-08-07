@@ -54,7 +54,7 @@
                 <p>@include('includes.errors')</p>
                 <div class="input-group">
                     <input name="cpf" type="number" required>
-                    <label for="">Usuário</label>
+                    <label for="">Cpf do Usuário</label>
                 </div>
 
                 <div class="input-group">

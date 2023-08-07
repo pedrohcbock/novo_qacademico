@@ -11,7 +11,7 @@
         <div class="form-box">
             <img src="../imgs/sim.png" alt="">
             <div class="form-value">
-                <form action="" method="POST">
+                <form action="">
                     <h2>Altera Senha</h2>
                     <div class="image">
                     </div>
