@@ -50,7 +50,8 @@ Route::prefix('/professores')->middleware("auth")->group(function () {
 });
 
 //Admins
-Route::prefix('/admins')->middleware("auth")->group(function () {
+
+Route::prefix('/admins')->middleware("auth:admin")->group(function () {
     Route::get('add', [AdminsController::class, 'add'])->name('admins.add');
 
     Route::post('add', [AdminsController::class, 'addSave'])->name('admins.addSave');
@@ -90,6 +91,6 @@ Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
 });
 
 //Login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');;
-Route::post('/login', [LoginController::class, 'login'])->middleware('guest');;
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

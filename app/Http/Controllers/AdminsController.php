@@ -7,9 +7,9 @@ use App\Models\Admin;
 
 class AdminsController extends Controller
 {
-    public function add_geral(){
-        return view('admins.add_geral');
-    }
+    // public function add_geral(){
+    //     return view('admins.add');
+    // }
     public function add()
     {
         return view('admins.add');
