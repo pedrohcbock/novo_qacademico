@@ -55,6 +55,7 @@ Route::prefix('/admins')->middleware("auth")->group(function () {
 
     Route::post('add', [AdminsController::class, 'addSave'])->name('admins.addSave');
 
+    Route::get('menu', [AdminsController::class, 'login'])->name('admins.login');
 });
 
 Route::get('admins/senha', [AdminsController::class, 'alter'])->name('admins.alter');

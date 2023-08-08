@@ -24,7 +24,7 @@ class LoginController extends Controller
         // Tentar autenticar como Admin
         if (Auth::guard('admin')->attempt($credentials)) {
 
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended('/includes/header');
         }
 
         return redirect()->back()->withErrors(['login' => 'Credenciais inválidas']);
