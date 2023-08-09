@@ -9,6 +9,7 @@ use App\Http\Controllers\NotasController;
 use App\Http\Controllers\MateriasController;
 use App\Http\Controllers\TurmasController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NavegacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,6 @@ use App\Http\Controllers\LoginController;
 Route::redirect('/', '/login');
 
 //Alunos
-Route::get('alunos/calendario', [AlunosController::class, 'calendario'])->name('calendario.calendario');
 
 Route::prefix('/alunos')->middleware('auth:admin', 'auth:aluno')->group(function () {
     Route::get('add', [AlunosController::class, 'add'])->name('alunos.add');
@@ -92,11 +92,11 @@ Route::prefix('/notas')->middleware("auth")->group(function () {
     Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
 });
 
+Route::get('navegacao/calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
 Route::prefix('/navegacao')->middleware("auth")->group(function () {
-    Route::get('calendario', [NotasController::class, 'calendario'])->name('navegacao.calendario');
-    Route::get('documento', [NotasController::class, 'documento'])->name('navegacao.documento');
-    Route::get('questionario', [NotasController::class, 'questionario'])->name('navegacao.questionario');
-    Route::get('refeitorio', [NotasController::class, 'refeitorio'])->name('navegacao.refeitorio');
+    Route::get('documento', [NavegacaoController::class, 'documento'])->name('navegacao.documento');
+    Route::get('questionario', [NavegacaoController::class, 'questionario'])->name('navegacao.questionario');
+    Route::get('refeitorio', [NavegacaoController::class, 'refeitorio'])->name('navegacao.refeitorio');
 });
 
 //Login
