@@ -45,7 +45,7 @@ class AlunosController extends Controller
 
         event(new Registered($aluno));
 
-        return redirect()->route('alunos.add');
+        return redirect()->route('includes.header')->with('success', 'Aluno cadastrado com sucesso!')  ;
     }
 
     public function alter()

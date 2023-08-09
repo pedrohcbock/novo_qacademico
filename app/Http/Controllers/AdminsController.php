@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AdminsController extends Controller
 {
@@ -20,9 +22,15 @@ class AdminsController extends Controller
             'nome' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'cpf' => 'required',
         ]);
-        Admin::create($dados);
-        return redirect()->route('professores.add');
+
+        $dados['password'] = Hash::make($dados['password']);
+        $admin = Admin::create($dados);
+
+        event(new Registered($admin));
+
+        return redirect()->route('includes.header')->with('success', 'Admin cadastrado com sucesso!')  ;
     }
 
     public function alter()
