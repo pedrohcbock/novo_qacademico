@@ -14,10 +14,11 @@ class Admin extends Model implements Authenticatable
 
     protected $table = 'admins';
     public $timestamps = false;
-    
+
     protected $fillable = [
         'nome',
         'email',
         'password',
+        'cpf',
     ];
 }

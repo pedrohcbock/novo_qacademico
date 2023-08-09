@@ -20,6 +20,7 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::redirect('/', '/login');
 
 //Alunos
@@ -67,26 +68,26 @@ Route::get('/includes/header', [CursosController::class, 'header'])->name('inclu
 
 //Cursos
 Route::prefix('/cursos')->middleware("auth")->group(function () {
-Route::get('aadd', [CursosController::class, 'add'])->name('cursos.add');
-Route::post('add', [CursosController::class, 'addSave'])->name('cursos.addSave');
+    Route::get('aadd', [CursosController::class, 'add'])->name('cursos.add');
+    Route::post('add', [CursosController::class, 'addSave'])->name('cursos.addSave');
 });
 
 //Materias
 Route::prefix('/materias')->middleware("auth")->group(function () {
-Route::get('add', [MateriasController::class, 'add'])->name('materias.add');
-Route::post('add', [MateriasController::class, 'addSave'])->name('materias.addSave');
+    Route::get('add', [MateriasController::class, 'add'])->name('materias.add');
+    Route::post('add', [MateriasController::class, 'addSave'])->name('materias.addSave');
 });
 
 //Turmas
 Route::prefix('/turmas')->middleware("auth")->group(function () {
-Route::get('add', [TurmasController::class, 'add'])->name('turmas.add');
-Route::post('add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
+    Route::get('add', [TurmasController::class, 'add'])->name('turmas.add');
+    Route::post('add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
 });
 
 //Notas
 Route::prefix('/notas')->middleware("auth")->group(function () {
-Route::get('add', [NotasController::class, 'add'])->name('notas.add');
-Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
+    Route::get('add', [NotasController::class, 'add'])->name('notas.add');
+    Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
 });
 
 Route::prefix('/navegacao')->middleware("auth")->group(function () {
