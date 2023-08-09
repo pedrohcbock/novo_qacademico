@@ -90,6 +90,13 @@ Route::get('add', [NotasController::class, 'add'])->name('notas.add');
 Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
 });
 
+Route::prefix('/navegacao')->middleware("auth")->group(function () {
+    Route::get('calendario', [NotasController::class, 'calendario'])->name('navegacao.calendario');
+    Route::get('documento', [NotasController::class, 'documento'])->name('navegacao.documento');
+    Route::get('questionario', [NotasController::class, 'questionario'])->name('navegacao.questionario');
+    Route::get('refeitorio', [NotasController::class, 'refeitorio'])->name('navegacao.refeitorio');
+});
+
 //Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);

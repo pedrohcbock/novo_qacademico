@@ -12,9 +12,6 @@
     <header>
         <div class="itens">
             <h1><div class="q">Q-aca</div>dêmico</h1>
-            <nav>
-
-            </nav>
         </div>
     </header>
 
@@ -22,7 +19,6 @@
         <div class="form-box">
             <main>
                 <div class="cima">
-
                     <div class="box"><a href="{{ route('navegacao.questionario') }}"><button>Questionário</button></a></div>
                     <div class="box"><a href="{{ route('navegacao.documento') }}"><button>Solicitar Documento</button></a></div>
                 </div>
