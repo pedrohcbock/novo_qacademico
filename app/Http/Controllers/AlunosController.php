@@ -12,6 +12,10 @@ use Illuminate\Validation\Rule;
 
 class AlunosController extends Controller
 {
+    public function calendario()
+    {
+        return view('alunos.calendario');
+    }
     public function add()
     {
         return view('alunos.add');

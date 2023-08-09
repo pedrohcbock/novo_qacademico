@@ -23,6 +23,8 @@ use App\Http\Controllers\LoginController;
 Route::redirect('/', '/login');
 
 //Alunos
+Route::get('alunos/calendario', [AlunosController::class, 'calendario'])->name('calendario.calendario');
+
 Route::prefix('/alunos')->middleware("auth:admin")->group(function () {
     Route::get('add', [AlunosController::class, 'add'])->name('alunos.add');
 
