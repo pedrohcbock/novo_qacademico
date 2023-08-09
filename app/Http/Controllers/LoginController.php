@@ -20,7 +20,6 @@ class LoginController extends Controller
             return redirect()->intended(route('includes.header'));
         }
 
-        // Tentar autenticar como Admin
         if (Auth::guard('admin')->attempt($credentials)) {
             return redirect()->intended(route('includes.header'));
         }
@@ -30,7 +29,6 @@ class LoginController extends Controller
 
     public function logout()
     {
-        // Verificar qual guard está autenticado e realizar o logout
         if (Auth::guard('aluno')->check()) {
             Auth::guard('aluno')->logout();
         } elseif (Auth::guard('admin')->check()) {
