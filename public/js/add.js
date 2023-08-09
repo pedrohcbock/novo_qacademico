@@ -58,10 +58,10 @@ showHidePass.forEach(btn => {
         input = e.target.previousElementSibling;
         if(input.type == "password"){
             input.type = "text";
-            btn.src = "/assets/hide-pass.svg";
+            btn.src = "/imgs/hide-pass.svg";
         }else{
             input.type = "password";
-            btn.src = "/assets/show-pass.svg";
+            btn.src = "/imgs/show-pass.svg";
         }
     });
 });
