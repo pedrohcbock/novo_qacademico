@@ -14,7 +14,47 @@ class TurmaMateriaSeeder extends Seeder
     {
         DB::table('turmas_materias')->insert([
             'idTurma' => 1,
-            'idMateria' => 1,
+            'idMateria' => 3,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 6,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 9,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 12,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 15,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 18,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 21,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 24,
+        ]);
+
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 27,
         ]);
     }
 }
