@@ -69,19 +69,19 @@ Route::post('admins/senha', [AdminsController::class, 'alterSave'])->name('admin
 Route::get('/includes/header', [CursosController::class, 'header'])->name('includes.header');
 
 //Cursos
-Route::prefix('/cursos')->middleware("auth")->group(function () {
-    Route::get('aadd', [CursosController::class, 'add'])->name('cursos.add');
+Route::prefix('/cursos')->middleware("auth:admin")->group(function () {
+    Route::get('add', [CursosController::class, 'add'])->name('cursos.add');
     Route::post('add', [CursosController::class, 'addSave'])->name('cursos.addSave');
 });
 
 //Materias
-Route::prefix('/materias')->middleware("auth")->group(function () {
+Route::prefix('/materias')->middleware("auth:admin")->group(function () {
     Route::get('add', [MateriasController::class, 'add'])->name('materias.add');
     Route::post('add', [MateriasController::class, 'addSave'])->name('materias.addSave');
 });
 
 //Turmas
-Route::prefix('/turmas')->middleware("auth")->group(function () {
+Route::prefix('/turmas')->middleware("auth:admin")->group(function () {
     Route::get('add', [TurmasController::class, 'add'])->name('turmas.add');
     Route::post('add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
 });
@@ -90,6 +90,9 @@ Route::prefix('/turmas')->middleware("auth")->group(function () {
 Route::prefix('/notas')->middleware("auth:admin")->group(function () {
     Route::get('add', [NotasController::class, 'add'])->name('notas.add');
     Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
+});
+Route::prefix('/notas')->middleware("auth:aluno")->group(function () {
+    Route::get('index', [NotasController::class, 'index'])->name('notas.index');
 });
 
 Route::get('navegacao/calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
