@@ -27,7 +27,6 @@ use App\Http\Controllers\HeaderController;
 Route::redirect('/', '/login');
 
 //Alunos
-
 Route::prefix('/alunos')->middleware("auth:admin")->group(function () {
     Route::get('add', [AlunosController::class, 'add'])->name('alunos.add');
 
@@ -38,23 +37,24 @@ Route::prefix('/alunos')->middleware("auth:admin")->group(function () {
     Route::post('edit/{aluno}', [AlunosController::class, 'editSave'])->name('alunos.editSave');
 });
 
-Route::get('alunos/senha', [AlunosController::class, 'alter'])->name('alunos.alter');
+//Alunos recuperar senha
+Route::get('alunos/senha', [AlunosController::class, 'newPassword'])->name('alunos.newPassword');
 
-Route::post('alunos/senha', [AlunosController::class, 'alterSave'])->name('alunos.alterSave');
+Route::post('alunos/senha', [AlunosController::class, 'newPasswordSave'])->name('alunos.newPasswordSave');
 
 //Professores
-Route::prefix('/professores')->middleware("auth")->group(function () {
+Route::prefix('/professores')->middleware("auth:admin")->group(function () {
     Route::get('add', [ProfessoresController::class, 'add'])->name('professores.add');
 
     Route::post('add', [ProfessoresController::class, 'addSave'])->name('professores.addSave');
-
-    Route::get('senha', [ProfessoresController::class, 'alter'])->name('professores.alter');
-
-    Route::post('senha', [ProfessoresController::class, 'alterSave'])->name('professores.alterSave');
 });
 
-//Admins
+//Professores recuperar senha
+Route::get('senha', [ProfessoresController::class, 'alter'])->name('professores.alter');
 
+Route::post('senha', [ProfessoresController::class, 'alterSave'])->name('professores.alterSave');
+
+//Admins
 Route::prefix('/admins')->middleware("auth:admin")->group(function () {
     Route::get('add', [AdminsController::class, 'add'])->name('admins.add');
 

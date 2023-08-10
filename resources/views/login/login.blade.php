@@ -37,7 +37,7 @@
                     <label for="">Senha</label>
                 </div>
                 <div class="forgot-pass">
-                    <a href="{{ route('alunos.alter') }}">Esqueci minha senha?</a>
+                    <a href="{{ route('alunos.newPassword') }}">Esqueci minha senha?</a>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
 
