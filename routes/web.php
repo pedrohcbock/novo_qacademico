@@ -10,6 +10,8 @@ use App\Http\Controllers\MateriasController;
 use App\Http\Controllers\TurmasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NavegacaoController;
+use App\Http\Controllers\HeaderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +68,7 @@ Route::get('admins/senha', [AdminsController::class, 'alter'])->name('admins.alt
 Route::post('admins/senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
 
 //Header
-Route::get('/includes/header', [CursosController::class, 'header'])->name('includes.header');
+Route::get('/includes/header-admin', [HeaderController::class, 'headerAdmin'])->middleware("auth:admin")->name('includes.header-admin');
 
 //Cursos
 Route::prefix('/cursos')->middleware("auth:admin")->group(function () {

@@ -17,11 +17,11 @@ class LoginController extends Controller
         $credentials = $request->only('cpf', 'password');
 
         if (Auth::guard('aluno')->attempt($credentials)) {
-            return redirect()->intended(route('includes.header'));
+            return redirect()->intended(route('includes.header-aluno'));
         }
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->intended(route('includes.header'));
+            return redirect()->intended(route('includes.header-admin'));
         }
 
         return redirect()->back()->withErrors(['login' => 'Credenciais inválidas']);
