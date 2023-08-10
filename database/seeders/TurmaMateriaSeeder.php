@@ -5,17 +5,16 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
-class TurmaSeeder extends Seeder
+class TurmaMateriaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('turmas')->insert([
-            'turma' => '1º Informática',
-            'numeroAlunos' => 23,
-            'idCurso' => 1,
+        DB::table('turmas_materias')->insert([
+            'idTurma' => 1,
+            'idMateria' => 1,
         ]);
     }
 }

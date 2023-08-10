@@ -26,7 +26,6 @@ return new class extends Migration
             $table->boolean('sexo');
             $table->foreignId('idCurso')->constrained('cursos');
             $table->foreignId('idTurma')->constrained('turmas');
-            $table->timestamps();
         });
     }
 
