@@ -14,11 +14,12 @@ class NotasController extends Controller
     {
 
         $dados = $form->validate([
-            'idmateria' => 'required',
+            'idAluno' => 'required',
+            'idMateria' => 'required',
             'nota' => 'required',
-           
 
-            
+
+
         ]);
         Nota::create($dados);
         return redirect()->route('notas.add');

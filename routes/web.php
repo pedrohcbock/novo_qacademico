@@ -87,7 +87,7 @@ Route::prefix('/turmas')->middleware("auth")->group(function () {
 });
 
 //Notas
-Route::prefix('/notas')->middleware("auth")->group(function () {
+Route::prefix('/notas')->middleware("auth:admin")->group(function () {
     Route::get('add', [NotasController::class, 'add'])->name('notas.add');
     Route::post('add', [NotasController::class, 'addSave'])->name('notas.addSave');
 });

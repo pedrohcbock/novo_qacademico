@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
-            
+            $table->foreignId('idAluno')->constrained('alunos');
             $table->foreignId('idMateria')->constrained('materias');
             $table->string('nota');
         });
