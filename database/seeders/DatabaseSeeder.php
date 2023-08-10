@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             TurmaSeeder::class,
             TurmaMateriaSeeder::class,
             AlunoSeeder::class,
+            NotaSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
