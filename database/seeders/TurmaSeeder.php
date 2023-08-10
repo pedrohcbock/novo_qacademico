@@ -13,7 +13,7 @@ class TurmaSeeder extends Seeder
     public function run(): void
     {
         DB::table('turmas')->insert([
-            'turma' => '1º Informática',
+            'turma' => '3º Informática',
             'numeroAlunos' => 23,
             'idCurso' => 1,
         ]);
