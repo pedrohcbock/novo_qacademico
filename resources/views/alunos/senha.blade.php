@@ -28,7 +28,11 @@
                         <input type="password" name="password_confirmation" required>
                         <label for="">Confirmar Nova Senha</label>
                     </div>
+<<<<<<< Updated upstream
                     <button type="submit">Alterar Senha</button>
+=======
+                    <button>Salvar</button>
+>>>>>>> Stashed changes
                 </form>
             </div>
         </div>

@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  header{
+    background-color: #50C878;
+}
+
+header div.menu h1.Qacademico{
+    color: white;
+    font-family: Arial;
+   padding: 2%;
+    margin-left: 3%;
+
+}
+
+header div.menu h1.Qacademico strong.negrito{
+    color: red;
+    font-family: Arial;
+}
+
+
+section div.sub_titulo h1.sub{
+    color: red;
+    font-family: Arial;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+section div.sub_titulo h2.sub_sub{
+    color: black;
+    font-family: Arial;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+section div.logoQuest {
+    margin-left: 16%;
+    margin-top: -3.5%;
+    background: #dbdbdb;
+    border-radius: 50px;
+    padding: 1%;
+    width: 1.5%;
+    height: 1%;
+}
+
+section div.meusQuest {
+    margin-top: 1%;
+    margin-left: 13%;
+    background: #dbdbdb;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    padding: 3%;
+    border-radius: 20px;
+    width: 70%;
+
+}
+
+section div.meusQuest h4.nomeQuest {
+    float: left;
+    white-space: nowrap;
+    max-width: 550px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+section div.paginacao {
+display: flex;
+justify-content: flex-end;
+margin-top: 12%;
+margin-right: 5%;
+}
+section div.paginacao svg#page1 {
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+section div.paginacao svg#page2 {
+    cursor: pointer;
+}
+
+section div.plusDoc{
+  margin-left: 70%;
+  margin-bottom: -3%;
+  margin-top: 5%;
+  text-decoration: none;
+}
+
+section div.plusDoc:hover{
+  cursor: pointer;
+  border: 1px solid rgb(48, 168, 216);
+  background-color: rgb(48, 168, 216);
+  color: #fff;
+  width: 15%;
+  padding: 1%;
+  padding-bottom: 0%;
+  border-radius: 10px;
+
+}
+
+section div.plusDoc svg{
+  float: left;
+  margin-right: 3%;
+}
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.603);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal {
+    background-color: #fff;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+
+  button.enviar_solicita {
+    color: #00d9ff;
+    padding: 10px 20px;
+    border: 1px solid #00d9ff;
+    border-radius: 10px;
+    cursor: pointer;
+
+    margin-top: 2%;
+  }
+
+  button.enviar_solicita:hover {
+    background-color: #00d9ff;
+    color: #fff;
+  }
+ section div.container button.abre_modal{
+    color: #00aeff;
+    margin-left: 70%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15%;
+
+  }
+
+  section div.container button.abre_modal:hover {
+
+   font-weight: 800;
+  }
+ section div.container button.abre_modal svg{
+    float: left;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+ }
+
+ section div.meusQuest button.btn-dow {
+    color: #00aeff;
+    padding: 1%;
+    border: 1px solid #00aeff;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10%;
+    float: left;
+    margin-left: 30%;
+    margin-right: 2%;
+}
+ section div.meusQuest button.btn-dow:hover{
+    border: 3px solid #00aeff;
+ }
+ section div.meusQuest button.btn-exclud{
+    color: #e46666;
+    padding: 1%;
+    border: 1px solid #e46666;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10%;
+ }
+
+ section div.meusQuest button.btn-exclud:hover{
+     border: 3px solid #e46666;
+ }
+.seleciona{
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    padding: 3%;
+    margin: 5%;
+    cursor: pointer;
+ }
+
+ .tipodoc{
+    float: left;
+ }
