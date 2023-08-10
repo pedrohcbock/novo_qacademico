@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="forgot-pass">
-                    <a href="{{ route('admins.alter') }}">Esqueci minha senha?</a>
+                    <a href="{{ route('admins.newPassword') }}">Esqueci minha senha?</a>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
                 <div class="sign-link">

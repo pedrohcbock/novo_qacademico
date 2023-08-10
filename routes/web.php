@@ -65,9 +65,9 @@ Route::prefix('/admins')->middleware("auth:admin")->group(function () {
     Route::get('menu', [AdminsController::class, 'login'])->name('admins.login');
 });
 
-Route::get('admins/senha', [AdminsController::class, 'alter'])->name('admins.alter');
+Route::get('admins/senha', [AdminsController::class, 'newPassword'])->name('admins.newPassword');
 
-Route::post('admins/senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
+Route::post('admins/senha', [AdminsController::class, 'newPasswordSave'])->name('admins.newPasswordSave');
 
 //Header Admin
 Route::get('/includes/header-admin', [HeaderController::class, 'headerAdmin'])->middleware("auth:admin")->name('includes.header-admin');
