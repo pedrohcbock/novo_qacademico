@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('turma');
             $table->integer('numeroAlunos');
-            $table->foreignId('idMateria')->constrained('materias');
             $table->foreignId('idCurso')->constrained('cursos');
         });
     }

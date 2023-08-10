@@ -10,4 +10,16 @@ class NavegacaoController extends Controller
     {
         return view('navegacao.menu');
     }
+    public function questionario()
+    {
+        return view('navegacao.questionario');
+    }
+    public function materiais()
+    {
+        return view('navegacao.materiais');
+    }
+    public function documento()
+    {
+        return view('navegacao.documento');
+    }
 }

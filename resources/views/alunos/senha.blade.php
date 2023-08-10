@@ -29,6 +29,7 @@
                         <label for="">Confirmar Nova Senha</label>
                     </div>
                     <button type="submit">Alterar Senha</button>
+                    <button>Salvar</button>
                 </form>
             </div>
         </div>

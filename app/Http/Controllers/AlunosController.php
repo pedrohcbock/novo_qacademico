@@ -45,7 +45,7 @@ class AlunosController extends Controller
 
         event(new Registered($aluno));
 
-        return redirect()->route('includes.header')->with('success', 'Aluno cadastrado com sucesso!');
+        return redirect()->route('includes.header-admin')->with('success', 'Aluno cadastrado com sucesso!');
     }
 
     public function newPassword()
@@ -63,7 +63,7 @@ class AlunosController extends Controller
         $aluno = Aluno::where('cpf', $request->cpf)->first();
 
         if (!$aluno) {
-            return redirect()->route('alunos.alter')->with('error', 'Aluno não encontrado.');
+            return redirect()->route('alunos.newPassword')->with('error', 'Aluno não encontrado.');
         }
 
         $aluno->update([

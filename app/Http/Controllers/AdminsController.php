@@ -30,16 +30,31 @@ class AdminsController extends Controller
 
         event(new Registered($admin));
 
-        return redirect()->route('includes.header')->with('success', 'Admin cadastrado com sucesso!')  ;
+        return redirect()->route('includes.header')->with('success', 'Admin cadastrado com sucesso!');
     }
 
-    public function alter()
+    public function newPassword()
     {
         return view('admins.senha');
     }
-    public function alterSave(Request $request)
+
+    public function newPasswordSave(Request $request)
     {
+        $request->validate([
+            'cpf' => 'required|string',
+            'password' => 'required|confirmed',
+        ]);
 
+        $admin = Admin::where('cpf', $request->cpf)->first();
 
+        if (!$admin) {
+            return redirect()->route('admins.newPassword')->with('error', 'Administrador não encontrado.');
+        }
+
+        $admin->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('login')->with('success', 'Senha alterada com sucesso.');
     }
 }

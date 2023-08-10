@@ -24,7 +24,9 @@ use App\Http\Controllers\HeaderController;
 |
 */
 
+
 Route::redirect('/', '/login');
+
 
 //Alunos
 Route::prefix('/alunos')->middleware("auth:admin")->group(function () {
@@ -63,9 +65,9 @@ Route::prefix('/admins')->middleware("auth:admin")->group(function () {
     Route::get('menu', [AdminsController::class, 'login'])->name('admins.login');
 });
 
-Route::get('admins/senha', [AdminsController::class, 'alter'])->name('admins.alter');
+Route::get('admins/senha', [AdminsController::class, 'newPassword'])->name('admins.newPassword');
 
-Route::post('admins/senha', [AdminsController::class, 'alterSave'])->name('admins.alterSave');
+Route::post('admins/senha', [AdminsController::class, 'newPasswordSave'])->name('admins.newPasswordSave');
 
 //Header Admin
 Route::get('/includes/header-admin', [HeaderController::class, 'headerAdmin'])->middleware("auth:admin")->name('includes.header-admin');
@@ -100,15 +102,15 @@ Route::prefix('/notas')->middleware("auth:aluno")->group(function () {
     Route::get('index', [NotasController::class, 'index'])->name('notas.index');
 });
 
-Route::get('navegacao/menu', [NavegacaoController::class, 'calendario'])->name('navegacao.menu');
+Route::get('navegacao/calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
 Route::prefix('/navegacao')->middleware("auth")->group(function () {
-    Route::get('calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
     Route::get('documento', [NavegacaoController::class, 'documento'])->name('navegacao.documento');
     Route::get('questionario', [NavegacaoController::class, 'questionario'])->name('navegacao.questionario');
+    Route::get('materiais', [NavegacaoController::class, 'materiais'])->name('navegacao.materiais');
     Route::get('refeitorio', [NavegacaoController::class, 'refeitorio'])->name('navegacao.refeitorio');
 });
 
 //Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
