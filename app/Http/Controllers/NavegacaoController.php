@@ -8,6 +8,6 @@ class NavegacaoController extends Controller
 {
     public function calendario()
     {
-        return view('navegacao.calendario');
+        return view('navegacao.menu');
     }
 }

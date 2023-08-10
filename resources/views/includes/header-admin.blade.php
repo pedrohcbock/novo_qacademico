@@ -36,6 +36,8 @@
             </main>
         </div>
     </section>
+
+    @yield('content')
 </body>
 
 </html>

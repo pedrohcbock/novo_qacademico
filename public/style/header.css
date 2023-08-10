@@ -4,17 +4,16 @@
 }
 
 header {
- box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
  background: #35be7c;
  position: fixed;
  width: 100%;
- height: 5vh;
+ height: 10vh;
  top: 0;
 }
 
-header, nav ul {
+header{
  display: flex;
- justify-content: space-between;
+ justify-content: flex-end;
  padding: 1rem;
 }
 
@@ -24,14 +23,15 @@ nav ul li {
 
 h1{
     display: flex;
+    margin-right: 4vw;
 }
 
 .itens {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-nav{
+nav {
     margin-top: 5px;
     height: 10px;
 }
