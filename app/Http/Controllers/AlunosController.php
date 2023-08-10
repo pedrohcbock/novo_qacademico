@@ -45,17 +45,32 @@ class AlunosController extends Controller
 
         event(new Registered($aluno));
 
-        return redirect()->route('includes.header')->with('success', 'Aluno cadastrado com sucesso!')  ;
+        return redirect()->route('includes.header')->with('success', 'Aluno cadastrado com sucesso!');
     }
 
-    public function alter()
+    public function newPassword()
     {
         return view('alunos.senha');
     }
-    public function alterSave(Request $request)
+
+    public function newPasswordSave(Request $request)
     {
+        $request->validate([
+            'cpf' => 'required|string',
+            'password' => 'required|confirmed',
+        ]);
 
+        $aluno = Aluno::where('cpf', $request->cpf)->first();
 
+        if (!$aluno) {
+            return redirect()->route('alunos.alter')->with('error', 'Aluno não encontrado.');
+        }
+
+        $aluno->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('login')->with('success', 'Senha alterada com sucesso.');
     }
 
     public function edit(Aluno $aluno)

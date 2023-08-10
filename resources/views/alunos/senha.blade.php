@@ -11,21 +11,24 @@
         <div class="form-box">
             <img src="../imgs/sim.png" alt="">
             <div class="form-value">
-                <form action="" method="POST">
-                    <h2>Altera Senha</h2>
-                    <div class="image">
+                <form action="{{ route('alunos.newPasswordSave') }}" method="POST">
+                    @csrf
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="text" name="cpf" required>
+                        <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password" required>
-                        <label for="">Senha Antiga</label>
+                        <label for="">Nova Senha</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="newPassword" required>
-                        <label for="">Nova Senha</label>
+                        <input type="password" name="password_confirmation" required>
+                        <label for="">Confirmar Nova Senha</label>
                     </div>
-                    <button>Logar</button>
+                    <button type="submit">Alterar Senha</button>
                 </form>
             </div>
         </div>
