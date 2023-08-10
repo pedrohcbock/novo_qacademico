@@ -24,7 +24,9 @@ use App\Http\Controllers\HeaderController;
 |
 */
 
+
 Route::redirect('/', '/login');
+
 
 //Alunos
 
@@ -101,9 +103,10 @@ Route::prefix('/notas')->middleware("auth:aluno")->group(function () {
 });
 
 Route::get('navegacao/calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
-Route::prefix('/navegacao')->middleware("auth")->group(function () {
+Route::prefix('/navegacao')->middleware("auth:aluno")->group(function () {
     Route::get('documento', [NavegacaoController::class, 'documento'])->name('navegacao.documento');
     Route::get('questionario', [NavegacaoController::class, 'questionario'])->name('navegacao.questionario');
+    Route::get('materiais', [NavegacaoController::class, 'materiais'])->name('navegacao.materiais');
     Route::get('refeitorio', [NavegacaoController::class, 'refeitorio'])->name('navegacao.refeitorio');
 });
 
