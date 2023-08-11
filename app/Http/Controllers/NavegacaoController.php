@@ -21,5 +21,6 @@ class NavegacaoController extends Controller
     public function documento()
     {
         return view('navegacao.documento');
+
     }
 }
