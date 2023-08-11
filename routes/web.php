@@ -8,6 +8,16 @@ use App\Http\Controllers\CursosController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\MateriasController;
 use App\Http\Controllers\TurmasController;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NavegacaoController;
+use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\DocumentosController;
+use App\Http\Controllers\RefeitorioController;
+
+
+>>>>>>> Stashed changes
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,5 +60,22 @@ Route::post('/materias/add', [MateriasController::class, 'addSave'])->name('mate
 Route::get('/turmas/add', [TurmasController::class, 'add'])->name('turmas.add');
 Route::post('/turmas/add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
 
+<<<<<<< Updated upstream
 Route::get('/notas/add', [NotasController::class, 'add'])->name('notas.add');
 Route::post('/notas/add', [NotasController::class, 'addSave'])->name('notas.addSave');
+=======
+//Login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//refeitorio
+Route::prefix('/refeitorio')->middleware("auth:admin")->group(function () {
+    Route::get('index', [RefeitorioController::class, 'add'])->name('refeitorio.index');
+    Route::post('index', [RefeitorioController::class, 'addSave'])->name('calendarios.index');
+});
+Route::prefix('/refeitorio')->middleware("auth:aluno")->group(function () {
+    Route::get('cardapio', [RefeitorioController::class, 'refeitorio'])->name('refeitorio.cardapio');
+    Route::get('view', [RefeitorioController::class, 'refeitorio'])->name('refeitorio.view');
+});
+>>>>>>> Stashed changes
