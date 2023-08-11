@@ -11,12 +11,9 @@ use App\Http\Controllers\TurmasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\DocumentosController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\CalendariosController;
 use App\Http\Controllers\MateriaisController;
-=======
 use App\Http\Controllers\RefeitoriosController;
->>>>>>> Stashed changes
 
 
 /*
