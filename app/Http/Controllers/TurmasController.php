@@ -7,6 +7,10 @@ use App\Models\Turma;
 
 class TurmasController extends Controller
 {
+    public function index()
+    {
+        return view('calendarios.index');
+    }
     public function add()
     {
         return view('turmas.add');
