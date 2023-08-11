@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use DocumentosSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +23,7 @@ class DatabaseSeeder extends Seeder
             TurmaMateriaSeeder::class,
             AlunoSeeder::class,
             NotaSeeder::class,
+            DocumentoSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

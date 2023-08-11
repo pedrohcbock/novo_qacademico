@@ -1,22 +1,32 @@
-@extends('includes.base')
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset("style/curso.css")}}">
+    <title>Adicionar Curso</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Curso</h1>
+        <form id="cursoForm" action="{{ route('cursos.addSave') }}" method="POST">
+            <input type="hidden" id="cursoId" name="cursoId">
 
-@section('title', 'Adiconar - Aluno')
+            <label for="nomeCurso">Nome do Curso:</label>
+            <input type="text" id="nomeCurso" name="nomeCurso" required>
 
-@section('content')
-    <h2>Adicione o seu produto</h2>
+            <h2>Turmas Disponíveis:</h2>
+            <div class="turma-list">
+                <label><input class="chack" type="checkbox" name="turma[]" value="1"> Turma A</label>
+                <label><input class="chack" type="checkbox" name="turma[]" value="2"> Turma B</label>
+                <label><input class="chack" type="checkbox" name="turma[]" value="3"> Turma C</label>
 
-    @if ($errors)
-        @foreach ($errors->all() as $err)
-            {{ $err }}<br>
-        @endforeach
-    @endif
+            </div>
 
-    <form action="{{ route('cursos.addSave') }}" method="post">
-        @csrf
-        <input type="text" name="curso" placeholder="Nome do curso">
-        <br>
+            <button type="submit">Adicionar Curso</button>
+        </form>
+    </div>
 
-        <input type="submit" value="Adiconar Produto">
-    </form>
-
-@endsection
+    <script src="{{ asset("js/curso.js")}}"></script>
+</body>
+</html>
