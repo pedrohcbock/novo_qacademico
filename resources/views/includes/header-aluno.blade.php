@@ -19,13 +19,13 @@
         <div class="form-box">
             <main>
                 <div class="cima">
-                    <div class="box"><a href="{{ route('navegacao.questionario') }}"><button>Questionário</button></a></div>
-                    <div class="box"><a href="{{ route('navegacao.documento') }}"><button>Solicitar Documento</button></a></div>
-                    <div class="box"><a href="{{ route('navegacao.materiais') }}"><button>Materiais</button></a></div>
+                    
+                    <div class="box"><a href="{{ route('documentos.index') }}"><button>Solicitar Documento</button></a></div>
+                    
                 </div>
                 <div class="baixo">
-                    <div class="box"><a href="{{ route('navegacao.calendario') }}"><button>Calendário Acadêmico</button></a></div>
-                    <div class="box"><a href="{{ route('navegacao.refeitorio') }}"><button>Refeitório</button></a></div>
+                    <div class="box"><a href="{{ route('calendarios.index') }}"><button>Calendário Acadêmico</button></a></div>
+                    
                     <div class="box"><a href="{{ route('notas.index') }}"><button>Nota</button></a></div>
                 </div>
             </main>

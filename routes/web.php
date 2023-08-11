@@ -126,15 +126,6 @@ Route::prefix('/notas')->middleware("auth:aluno")->group(function () {
     Route::get('index', [NotasController::class, 'index'])->name('notas.index');
 });
 
-
-Route::prefix('/navegacao')->middleware("auth")->group(function () {
-    Route::get('documento', [NavegacaoController::class, 'documento'])->name('navegacao.documento');
-    Route::get('questionario', [NavegacaoController::class, 'questionario'])->name('navegacao.questionario');
-    Route::get('materiais', [NavegacaoController::class, 'materiais'])->name('navegacao.materiais');
-    Route::get('refeitorio', [NavegacaoController::class, 'refeitorio'])->name('navegacao.refeitorio');
-    Route::get('calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
-});
-
 //Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
