@@ -11,8 +11,12 @@ use App\Http\Controllers\TurmasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\DocumentosController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\CalendariosController;
 use App\Http\Controllers\MateriaisController;
+=======
+use App\Http\Controllers\RefeitoriosController;
+>>>>>>> Stashed changes
 
 
 /*
@@ -142,3 +146,14 @@ Route::prefix('/notas')->middleware("auth:aluno")->group(function () {
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Documentos
+Route::prefix('/refeitorios')->middleware("auth:admin")->group(function () {
+    Route::get('index', [RefeitoriosController::class, 'index'])->name('refeitorios.index');
+
+});
+
+Route::prefix('/refeitorios')->middleware("auth:aluno")->group(function () {
+    Route::get('cardapio', [RefeitoriosController::class, 'cardapio'])->name('refeitorios.cardapio');
+    Route::get('view', [RefeitoriosController::class, 'view'])->name('refeitorios.view');
+});
