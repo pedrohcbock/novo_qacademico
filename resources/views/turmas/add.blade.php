@@ -63,7 +63,7 @@
     @endif
 
     <section id="signup">
-        <form action="{{ route('alunos.addSave') }}" method="POST" class="form">
+        <form action="{{ route('turmas.addSave') }}" method="POST" class="form">
             @csrf
             <div class="progress">
                 <div class="progress-bar active current">
@@ -77,27 +77,17 @@
                     <h1>Cadastro de Turma</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="nome"><span>*</span>Nome</label>
-                            <input type="text" name="nome" id="nome" placeholder="João da Silva" required>
+                            <label for="nome"><span>*</span>Nome do curso</label>
+                            <input type="text" name="turma" id="turma" required>
                         </div>
                         <div class="field-input">
-                            <label for="curso"><span>*</span>Curso</label>
-                            <select name="curso">
-                                <label>
-                                    <option name="curso[]" value="1"> Curso A
-                                </label>
-                                <label>
-                                    <option name="curso[]" value="2"> Curso B
-                                </label>
-                                <label>
-                                    <option name="curso[]" value="3"> Curso C
-                                </label>
-                            </select>
+                            <label for="curso"><span>*</span>Número de alunos</label>
+                            <input type="number" name="numeroAlunos" id="numeroAlunos" required>
                         </div>
                     </div>
                     <div class="btn">
-                        <button type="button" id="next-btn">
-                            <img src="../imgs/next.svg" alt="">
+                        <button type="submit" id="submit-btn">
+                            Cadastrar turma
                         </button>
                     </div>
                 </div>

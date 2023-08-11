@@ -24,14 +24,8 @@
                     <p>Adicionar Notas</p>
                 </a>
             </li>
-            {{-- <li>
-            <a href="{{ route('navegacao.questionario') }}"
-              ><ion-icon name="reader-outline"></ion-icon>
-              <p>Questionário</p></a
-            >
-        </li> --}}
             <li>
-            <a href="{{ route('calendarios.add') }}"
+            <a href="{{ route('turmas.add') }}"
               ><ion-icon name="today-outline"></ion-icon>
               <p>Calendário</p>
               </a>
