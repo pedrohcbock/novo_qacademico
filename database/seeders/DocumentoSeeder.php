@@ -18,12 +18,12 @@ class DocumentoSeeder extends Seeder
 
         Documento::create([
             'tipo' => 'Atestado de Matricula',
-            'nomeArquivo' => 'Atestado de Matricula.pdf',
+            'nomeArquivo' => 'AtestadodeMatricula.pdf',
         ]);
 
         Documento::create([
             'tipo' => 'Histórico Escolar',
-            'nomeArquivo' => 'Histórico Escolar.pdf',
+            'nomeArquivo' => 'HistoricoEscolar.pdf',
         ]);
 
         // Copiar os arquivos para a pasta storage/app/public/uploads
