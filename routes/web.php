@@ -71,10 +71,10 @@ Route::get('admins/senha', [AdminsController::class, 'newPassword'])->name('admi
 Route::post('admins/senha', [AdminsController::class, 'newPasswordSave'])->name('admins.newPasswordSave');
 
 //Header Admin
-Route::get('/includes/header-admin', [HeaderController::class, 'headerAdmin'])->middleware("auth:admin")->name('includes.header-admin');
+Route::get('/includes/menu-admin', [HeaderController::class, 'headerAdmin'])->middleware("auth:admin")->name('includes.header-admin');
 
 //Header Aluno
-Route::get('/includes/header-aluno', [HeaderController::class, 'headerAluno'])->middleware("auth:aluno")->name('includes.header-aluno');
+Route::get('/includes/menu-aluno', [HeaderController::class, 'headerAluno'])->middleware("auth:aluno")->name('includes.header-aluno');
 
 //Cursos
 Route::prefix('/cursos')->middleware("auth:admin")->group(function () {

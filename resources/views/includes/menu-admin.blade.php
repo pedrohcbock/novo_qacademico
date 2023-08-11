@@ -21,7 +21,7 @@
             </li>
             <li>
                 <a href="{{ route('notas.add') }}"><ion-icon name="stats-chart-outline"></ion-icon>
-                    <p>Notas</p>
+                    <p>Adicionar Notas</p>
                 </a>
             </li>
             {{-- <li>
@@ -33,12 +33,12 @@
             <li>
             <a href="{{ route('calendarios.add') }}"
               ><ion-icon name="today-outline"></ion-icon>
-              <p>Calendário</p></a
-            >
+              <p>Calendário</p>
+              </a>
         </li>
             <li>
                 <a href="{{ route('documentos.add') }}"><ion-icon name="folder-open-outline"></ion-icon>
-                    <p>Documentos</p>
+                    <p>Adicionar Documentos</p>
                 </a>
             </li>
         </ul>
