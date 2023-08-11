@@ -23,7 +23,7 @@
     @endif
 
     <section id="signup">
-        <form action="{{ route('documentos.addSave') }}" method="POST" class="form" enctype="multipart/form-data">
+        <form action="{{ route('materiais.addSave') }}" method="POST" class="form" enctype="multipart/form-data">
             @csrf
             <div class="progress">
                 <div class="progress-bar active current">
@@ -34,18 +34,18 @@
             </div>
             <div class="pages">
                 <div class="page active">
-                    <h1>Cadastro de Turma</h1>
+                    <h1>Adicionar Material</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="tipo_documento" class="tipodoc"><span>*</span>Arquivo</label>
-                            <input type="file" id="arquivo" name="arquivo" required>
+                            <label for="tipo_documento" class="tipodoc"><span>*</span>material</label>
+                            <input type="file" id="material" name="material" required>
                         </div>
                         <div class="field-input">
                             <label for="curso"><span>*</span>Curso</label>
-                            <select id="tipo_documento" class="seleciona" name="tipo_documento" required>
-                                <option value="Atestado de Matricula">Atestado de Matricula</option>
-                                <option value="Boletim">Boletim</option>
-                                <option value="Histórico Escolar">Histórico Escolar</option>
+                            <select id="tipo_material" class="seleciona" name="tipo_material" required>
+                                <option value="Atividade">Atividade</option>
+                                <option value="Apoio">Apoio</option>
+                                <option value="Recuperação">Recuperação</option>
                             </select>
                         </div>
                     </div>

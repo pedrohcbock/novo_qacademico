@@ -9,9 +9,10 @@ use App\Http\Controllers\NotasController;
 use App\Http\Controllers\MateriasController;
 use App\Http\Controllers\TurmasController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\NavegacaoController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\DocumentosController;
+use App\Http\Controllers\CalendariosController;
+use App\Http\Controllers\MateriaisController;
 
 
 /*
@@ -95,12 +96,8 @@ Route::prefix('/turmas')->middleware("auth:admin")->group(function () {
 });
 
 //Calendário
-Route::prefix('/calendarios')->middleware("auth:admin")->group(function () {
-    Route::get('add', [TurmasController::class, 'add'])->name('calendarios.add');
-    Route::post('add', [TurmasController::class, 'addSave'])->name('calendarios.addSave');
-});
-Route::prefix('/calendarios')->middleware("auth:aluno")->group(function () {
-    Route::get('index', [NotasController::class, 'index'])->name('calendarios.index');
+Route::prefix('/calendarios')->group(function () {
+    Route::get('index', [CalendariosController::class, 'index'])->name('calendarios.index');
 });
 
 // Documentos
@@ -114,6 +111,19 @@ Route::prefix('/documentos')->middleware("auth:aluno")->group(function () {
     Route::post('upload', [DocumentosController::class, 'upload'])->name('documentos.upload');
     Route::get('download/{id}', [DocumentosController::class, 'download'])->name('documentos.download');
     Route::get('filtrar', [DocumentosController::class, 'filtrar'])->name('documentos.filtrar');
+});
+
+// Materiais
+Route::prefix('/materiais')->middleware("auth:admin")->group(function () {
+    Route::get('add', [MateriaisController::class, 'add'])->name('materiais.add');
+    Route::post('add', [MateriaisController::class, 'addSave'])->name('materiais.addSave');
+});
+
+Route::prefix('/materiais')->middleware("auth:aluno")->group(function () {
+    Route::get('index', [MateriaisController::class, 'index'])->name('materiais.index');
+    Route::post('upload', [MateriaisController::class, 'upload'])->name('materiais.upload');
+    Route::get('download/{id}', [MateriaisController::class, 'download'])->name('materiais.download');
+    Route::get('filtrar', [MateriaisController::class, 'filtrar'])->name('materiais.filtrar');
 });
 
 

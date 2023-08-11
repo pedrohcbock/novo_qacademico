@@ -23,13 +23,13 @@
         <div class="form-box">
             <main>
                 <div class="cima">
-                    {{-- <div class="box"><a href="{{ route('navegacao.questionario') }}"><button>Questionário</button></a></div> --}}
+                    <div class="box"><a href="{{ route('materiais.add') }}"><button>Adicionar Material</button></a>
                     <div class="box"><a href="{{ route('documentos.add') }}"><button>Adicionar Documento</button></a>
                     </div>
                     <div class="box"><a href="{{ route('alunos.add') }}"><button>Adicionar Aluno</button></a></div>
                 </div>
                 <div class="baixo">
-                    <div class="box"><a href="{{ route('calendarios.add') }}"><button>Adicionar Turma</button></a></div>
+                    <div class="box"><a href="{{ route('calendarios.index') }}"><button>Adicionar Turma</button></a></div>
                     {{-- <div class="box"><a href="{{ route('navegacao.refeitorio') }}"><button>Refeitório</button></a></div> --}}
                     <div class="box"><a href="{{ route('notas.add') }}"><button>Adicionar Notas</button></a></div>
                 </div>
