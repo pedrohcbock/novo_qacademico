@@ -21,7 +21,11 @@
                 <div class="cima">
                     <div class="box"><a href="{{ route('calendarios.index') }}"><button>Calendário</button></a></div>
                     <div class="box"><a href="{{ route('documentos.index') }}"><button>Solicitar Documento</button></a></div>
+<<<<<<< Updated upstream
 
+=======
+                    <div class="box"><a href="{{ route('refeitorios.view') }}"><button>Refeitório</button></a></div>
+>>>>>>> Stashed changes
                 </div>
                 <div class="baixo">
                     <div class="box"><a href="{{ route('calendarios.index') }}"><button>Calendário Acadêmico</button></a></div>
