@@ -11,6 +11,7 @@ use App\Http\Controllers\TurmasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NavegacaoController;
 use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\DocumentosController;
 
 
 /*
@@ -62,7 +63,7 @@ Route::prefix('/admins')->middleware("auth:admin")->group(function () {
 
     Route::post('add', [AdminsController::class, 'addSave'])->name('admins.addSave');
 
-    Route::get('menu', [AdminsController::class, 'login'])->name('admins.login');
+    Route::get('menu-admin', [AdminsController::class, 'login'])->name('admins.login');
 });
 
 Route::get('admins/senha', [AdminsController::class, 'newPassword'])->name('admins.newPassword');
@@ -93,6 +94,29 @@ Route::prefix('/turmas')->middleware("auth:admin")->group(function () {
     Route::post('add', [TurmasController::class, 'addSave'])->name('turmas.addSave');
 });
 
+//Calendário
+Route::prefix('/calendarios')->middleware("auth:admin")->group(function () {
+    Route::get('add', [TurmasController::class, 'add'])->name('calendarios.add');
+    Route::post('add', [TurmasController::class, 'addSave'])->name('calendarios.addSave');
+});
+Route::prefix('/calendarios')->middleware("auth:aluno")->group(function () {
+    Route::get('index', [NotasController::class, 'index'])->name('calendarios.index');
+});
+
+// Documentos
+Route::prefix('/documentos')->middleware("auth:admin")->group(function () {
+    Route::get('add', [DocumentosController::class, 'add'])->name('documentos.add');
+    Route::post('add', [DocumentosController::class, 'addSave'])->name('documentos.addSave');
+});
+
+Route::prefix('/documentos')->middleware("auth:aluno")->group(function () {
+    Route::get('index', [DocumentosController::class, 'index'])->name('documentos.index');
+    Route::post('upload', [DocumentosController::class, 'upload'])->name('documentos.upload');
+    Route::get('download/{id}', [DocumentosController::class, 'download'])->name('documentos.download');
+    Route::get('filtrar', [DocumentosController::class, 'filtrar'])->name('documentos.filtrar');
+});
+
+
 //Notas
 Route::prefix('/notas')->middleware("auth:admin")->group(function () {
     Route::get('add', [NotasController::class, 'add'])->name('notas.add');
@@ -102,12 +126,13 @@ Route::prefix('/notas')->middleware("auth:aluno")->group(function () {
     Route::get('index', [NotasController::class, 'index'])->name('notas.index');
 });
 
-Route::get('navegacao/calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
+
 Route::prefix('/navegacao')->middleware("auth")->group(function () {
     Route::get('documento', [NavegacaoController::class, 'documento'])->name('navegacao.documento');
     Route::get('questionario', [NavegacaoController::class, 'questionario'])->name('navegacao.questionario');
     Route::get('materiais', [NavegacaoController::class, 'materiais'])->name('navegacao.materiais');
     Route::get('refeitorio', [NavegacaoController::class, 'refeitorio'])->name('navegacao.refeitorio');
+    Route::get('calendario', [NavegacaoController::class, 'calendario'])->name('navegacao.calendario');
 });
 
 //Login
