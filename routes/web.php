@@ -35,6 +35,8 @@ Route::prefix('/alunos')->middleware("auth:admin")->group(function () {
 
     Route::post('add', [AlunosController::class, 'addSave'])->name('alunos.addSave');
 
+    Route::get('calendario', [AlunosController::class, 'calendario'])->name('alunos.calendario');
+
     Route::get('edit/{aluno}', [AlunosController::class, 'edit'])->name('alunos.edit');
 
     Route::post('edit/{aluno}', [AlunosController::class, 'editSave'])->name('alunos.editSave');
