@@ -49,7 +49,8 @@
     <title>Adicionar Aluno</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="../style/add.css">
     <script src="../js/add.js" defer></script>
 </head>
@@ -77,12 +78,16 @@
                     <h1>Cadastro de Turma</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="nome"><span>*</span>Nome do curso</label>
+                            <label for="nome"><span>*</span>Nome do turma</label>
                             <input type="text" name="turma" id="turma" required>
                         </div>
                         <div class="field-input">
                             <label for="curso"><span>*</span>Número de alunos</label>
                             <input type="number" name="numeroAlunos" id="numeroAlunos" required>
+                        </div>
+                        <div class="field-input">
+                            <label for="curso"><span>*</span>Curso</label>
+                            <input type="number" name="idCurso" id="idCurso" required>
                         </div>
                     </div>
                     <div class="btn">
@@ -99,4 +104,3 @@
 </body>
 
 </html>
-

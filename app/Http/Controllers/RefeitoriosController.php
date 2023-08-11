@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class RefeitoriosController extends Controller
 {
-    public function index(){
+    public function add(){
 
-        return view('refeitorios.index');
+        return view('refeitorios.add');
 
     }
     public function view(){

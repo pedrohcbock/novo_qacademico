@@ -146,7 +146,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Documentos
 Route::prefix('/refeitorios')->middleware("auth:admin")->group(function () {
-    Route::get('index', [RefeitoriosController::class, 'index'])->name('refeitorios.index');
+    Route::get('add', [RefeitoriosController::class, 'add'])->name('refeitorios.add');
 
 });
 

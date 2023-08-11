@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const menuDiv = document.getElementById("menu");
-  
+
     function loadMenuForWeek() {
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const week = urlParams.get("week");
-  
+      const week = urlParams.get("{{route('refeitorios.cardapio')}}");
+
       if (week) {
         const menu = localStorage.getItem(week);
         if (menu) {
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         menuDiv.appendChild(errorText);
       }
     }
-  
+
     loadMenuForWeek();
   });
-  

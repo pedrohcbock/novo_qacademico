@@ -21,6 +21,7 @@ class TurmasController extends Controller
         $dados = $form->validate([
             'turma' => 'required',
             'numeroAlunos' => 'required',
+            'idCurso' => 'required',
         ]);
         Turma::create($dados);
         return redirect()->route('turmas.add');
