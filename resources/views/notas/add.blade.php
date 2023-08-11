@@ -62,16 +62,16 @@
                     <h1>Adicionar Nota</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="email"><span>*</span>Aluno</label>
-                            <input type="text" name="idAluno" placeholder="Insira o nome do aluno">
+                            <label for="idAluno"><span>*</span>Aluno</label>
+                            <input type="number" name="idAluno" placeholder="Insira o id do aluno">
                         </div>
                         <div class="field-input">
-                            <label for="nome"><span>*</span>Materia</label>
-                            <input type="text" name="idMateria" placeholder="Insira a matéria">
+                            <label for="idMateria"><span>*</span>Materia</label>
+                            <input type="number" name="idMateria" placeholder="Insira o id da matéria">
                         </div>
                         <div class="field-input">
-                            <label for="nome"><span>*</span>Nota</label>
-                            <input type="number" step="0.01" name="idMateria" placeholder="Insira a nota do aluno">
+                            <label for="nota"><span>*</span>Nota</label>
+                            <input type="number" step="0.01" name="nota" placeholder="Insira a nota do aluno">
                         </div>
                     </div>
                     <div class="btn">

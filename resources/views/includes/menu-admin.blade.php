@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li>
-            <a href="{{ route('turmas.add') }}"
+            <a href="{{ route('calendarios.index') }}"
               ><ion-icon name="today-outline"></ion-icon>
               <p>Calendário</p>
               </a>
@@ -33,6 +33,11 @@
             <li>
                 <a href="{{ route('documentos.add') }}"><ion-icon name="folder-open-outline"></ion-icon>
                     <p>Adicionar Documentos</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('materiais.add') }}"><ion-icon name="folder-open-outline"></ion-icon>
+                    <p>Adicionar Materiais</p>
                 </a>
             </li>
         </ul>
