@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: 40%;
+    margin-top: 10%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+form label{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+form textarea{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+form input {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 30%;
+    border: 1px solid rgb(207, 207, 207);
+   
+    border-radius: 50px;
+    margin-left: 35%;
+    padding: 2%;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+#turmaForm{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}

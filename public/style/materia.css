@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: 40%;
+    margin-top: 10%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+form label{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+form textarea{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+form input#nomeMateria {
+    display: block;
+  
+   margin-left: 35%;
+    border: 1px solid rgb(189, 189, 189);
+    height: 15%;
+    padding: 1.5%;
+    border-radius: 50px;
+   
+}
+form input.check {
+    display: block;
+  
+   margin-left: 50%;
+    border: 1px solid rgb(207, 207, 207);
+    height: 15%;
+    border-radius: 50px;
+   
+}
+
+form button {
+    padding: 10px 20px;
+    margin-top: 2%;
+    margin-left: 3%;
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+#materiaForm{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+.curso-list {
+    margin-top: 10px;
+}
+
+.curso-list label {
+    display: block;
+    margin-bottom: 5px;
+}

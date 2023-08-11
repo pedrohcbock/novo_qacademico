@@ -1,25 +1,32 @@
-@extends('includes.base')
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset("style/materia.css")}}">
+    <title>Adicionar Matéria</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Matéria</h1>
+        <form id="materiaForm">
+            <input type="hidden" id="materiaId" name="materiaId">
 
-@section('title', 'Adiconar - Aluno')
+            <label for="nomeMateria">Nome da Matéria:</label>
+            <input type="text" id="nomeMateria" name="nomeMateria" required>
 
-@section('content')
-    <h2>Adicione o seu produto</h2>
+            <h2>Cursos Disponíveis:</h2>
+            <div class="curso-list">
+                <label><input type="checkbox" name="curso[]" value="1"> Curso A</label>
+                <label><input type="checkbox" name="curso[]" value="2"> Curso B</label>
+                <label><input type="checkbox" name="curso[]" value="3"> Curso C</label>
 
-    @if ($errors)
-        @foreach ($errors->all() as $err)
-            {{ $err }}<br>
-        @endforeach
-    @endif
+            </div>
 
-    <form action="{{ route('materias.addSave') }}" method="post">
-        @csrf
-        <input type="text" name="materia" placeholder="materia">
-        <br>
-        <input type="number" name="cargaHoraria" placeholder="cargaHoraria">
-        <br>
-      
-        <input type="submit" value="Adiconar Produto">
-    </form>
+            <button type="submit">Adicionar Matéria</button>
+        </form>
+    </div>
 
-@endsection
-
+    <script src="{{asset("js/materia.js")}}"></script>
+</body>
+</html>
