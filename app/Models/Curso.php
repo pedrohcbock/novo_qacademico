@@ -13,6 +13,5 @@ class Curso extends Model
 
     protected $fillable = [
         'curso'
-
     ];
 }
