@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//Rota da API do aluno
+Route::group(['prefix' => 'alunos'], function () {
+    Route::get('/', [AlunosController::class, 'index']);
+    Route::get('/{aluno}', [AlunosController::class, 'show']);
+    Route::post('/', [AlunosController::class, 'create']);
+    Route::put('/{aluno}', [AlunosController::class, 'update']);
+    Route::put('/{aluno}/change-password', [AlunosController::class, 'changePassword']);
+    Route::delete('/{aluno}', [AlunosController::class, 'delete']);
+});
