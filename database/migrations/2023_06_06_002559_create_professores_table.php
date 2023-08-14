@@ -15,7 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email');
-            $table->string('senha');
+            $table->string('cpf');
+            $table->string('password');
+            $table->date('dataNasc');
+            $table->string('foto');
+            $table->string('nomePai');
+            $table->string('nomeMae');
+            $table->string('siape');
+            $table->string('telefone');
+            $table->boolean('sexo');
             $table->foreignId('idMateria')->constrained('materias');
         });
     }

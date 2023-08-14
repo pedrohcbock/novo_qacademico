@@ -154,3 +154,6 @@ Route::prefix('/refeitorios')->middleware("auth:aluno")->group(function () {
     Route::get('cardapio', [RefeitoriosController::class, 'cardapio'])->name('refeitorios.cardapio');
     Route::get('view', [RefeitoriosController::class, 'view'])->name('refeitorios.view');
 });
+
+//Chamar a rota das API
+require __DIR__.'/api.php';

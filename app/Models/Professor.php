@@ -12,7 +12,15 @@ class Professor extends Model
     protected $fillable = [
         'nome',
         'email',
-        'senha',
+        'cpf',
+        'password',
+        'dataNasc',
+        'foto',
+        'nomePai',
+        'nomeMae',
+        'siape',
+        'telefone',
+        'sexo',
         'idMateria',
     ];
 }
