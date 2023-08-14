@@ -40,6 +40,11 @@
                     <p>Adicionar Materiais</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('refeitorios.add') }}"><ion-icon name="today-outline"></ion-icon>
+                  <p> Refeitório</p>
+                </a>
+            </li>
         </ul>
         <ul>
             <li class="switch-theme">

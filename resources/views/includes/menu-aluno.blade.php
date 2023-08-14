@@ -35,6 +35,11 @@
                     <p>Documentos</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('refeitorios.view') }}"><ion-icon name="today-outline"></ion-icon>
+                    <p>refeitório</p>
+                </a>
+            </li>
         </ul>
         <ul>
             <li class="switch-theme">

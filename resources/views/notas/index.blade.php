@@ -1,15 +1,17 @@
+@extends('includes.menu-aluno')
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{asset("style/notas.css")}}">
     <title>Notas do Aluno</title>
 </head>
 <body>
-    <h1>Notas do Aluno {{ Auth::guard('aluno')->user()->nome }}</h1>
+    <h1 class="titulo_notas">Notas do Aluno {{ Auth::guard('aluno')->user()->nome }}</h1>
 
-    <table>
+    <table class="notas_aluno">
         <thead>
             <tr>
-                <th>Matéria</th>
+                <th>Matéria   </th>
                 <th>Nota</th>
             </tr>
         </thead>

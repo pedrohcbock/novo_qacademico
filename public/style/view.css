@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+
   .container {
     max-width: 600px;
     margin: 0 auto;
@@ -12,29 +12,28 @@ body {
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   h1 {
     text-align: center;
   }
-  
+
   #menuList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
   }
-  
+
   a {
     display: block;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #63d49d;
     color: #fff;
     text-align: center;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
   }
-  
+
   a:hover {
-    background-color: #0056b3;
+    background-color: #30d680;
   }
-  
