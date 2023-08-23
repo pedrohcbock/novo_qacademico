@@ -49,18 +49,6 @@ Route::get('alunos/senha', [AlunosController::class, 'newPassword'])->name('alun
 
 Route::post('alunos/senha', [AlunosController::class, 'newPasswordSave'])->name('alunos.newPasswordSave');
 
-//Professores
-Route::prefix('/professores')->middleware("auth:admin")->group(function () {
-    Route::get('add', [ProfessoresController::class, 'add'])->name('professores.add');
-
-    Route::post('add', [ProfessoresController::class, 'addSave'])->name('professores.addSave');
-});
-
-//Professores recuperar senha
-Route::get('senha', [ProfessoresController::class, 'alter'])->name('professores.alter');
-
-Route::post('senha', [ProfessoresController::class, 'alterSave'])->name('professores.alterSave');
-
 //Admins
 Route::prefix('/admins')->middleware("auth:admin")->group(function () {
     Route::get('add', [AdminsController::class, 'add'])->name('admins.add');
@@ -153,6 +141,3 @@ Route::prefix('/refeitorios')->middleware("auth:aluno")->group(function () {
     Route::get('cardapio', [RefeitoriosController::class, 'cardapio'])->name('refeitorios.cardapio');
     Route::get('view', [RefeitoriosController::class, 'view'])->name('refeitorios.view');
 });
-
-//Chamar a rota das API
-require __DIR__.'/api.php';

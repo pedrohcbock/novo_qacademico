@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CursoSeeder::class,
             MateriaSeeder::class,
-            ProfessorSeeder::class,
             TurmaSeeder::class,
             TurmaMateriaSeeder::class,
             AlunoSeeder::class,
