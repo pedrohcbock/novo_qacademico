@@ -7,6 +7,7 @@ use App\Models\Curso;
 
 class CursosController extends Controller
 {
+
     public function add(){
         return view('cursos.add');
     }

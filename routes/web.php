@@ -83,8 +83,7 @@ Route::get('/includes/menu-aluno', [HeaderController::class, 'headerAluno'])->mi
 //Cursos
 Route::prefix('/cursos')->middleware("auth:admin")->group(function () {
     Route::get('add', [CursosController::class, 'add'])->name('cursos.add');
-    Route::post('add', [CursosController::class, 'addSave'])->name('cursos.addSave');
-});
+    Route::post('add', [CursosController::class, 'addSave'])->name('cursos.addSave');});
 
 //Materias
 Route::prefix('/materias')->middleware("auth:admin")->group(function () {

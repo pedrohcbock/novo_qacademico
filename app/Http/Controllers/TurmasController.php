@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Turma;
+use App\Models\Curso;
 
 class TurmasController extends Controller
 {
     public function index()
     {
-        return view('calendarios.index');
+        return view('turmas.index');
     }
     public function add()
     {
-        return view('turmas.add');
+        $cursos = Curso::all();
+        return view('turmas.add', compact('cursos'));;
     }
     public function addSave(Request $form)
     {
@@ -24,6 +26,6 @@ class TurmasController extends Controller
             'idCurso' => 'required',
         ]);
         Turma::create($dados);
-        return redirect()->route('turmas.add');
+        return redirect()->route('includes.header-admin');
     }
 }

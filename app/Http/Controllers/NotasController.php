@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Nota;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Aluno;
+use App\Models\Materia;
 
 class NotasController extends Controller
 {
     public function add()
     {
-        return view('notas.add');
+        $materias = Materia::all();
+        $alunos = Aluno::all();
+        return view('notas.add', compact('alunos', 'materias'));
     }
     public function addSave(Request $form)
     {

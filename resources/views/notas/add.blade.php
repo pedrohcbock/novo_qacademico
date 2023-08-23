@@ -1,29 +1,3 @@
-@extends('includes.base')
-
-@section('title', 'Adiconar - Aluno')
-
-@section('content')
-    <h2>Adicione o seu produto</h2>
-
-    @if ($errors)
-        @foreach ($errors->all() as $err)
-            {{ $err }}<br>
-        @endforeach
-    @endif
-
-    <form action="{{ route('notas.addSave') }}" method="post">
-        @csrf
-        <input type="number" name="idAluno" placeholder="Aluno">
-        <br>
-        <input type="number" name="idMateria" placeholder="materia">
-        <br>
-        <input type="number" name="nota" placeholder="nota">
-        <br>
-        <input type="submit" value="Adiconar Produto">
-    </form>
-
-@endsection
-
 <!DOCTYPE html>
 <html lang="pt_BR">
 
@@ -40,7 +14,7 @@
 </head>
 
 <body>
-
+    @extends('includes.menu-admin')
     @if ($errors)
         @foreach ($errors->all() as $err)
             {{ $err }}<br>
@@ -62,12 +36,22 @@
                     <h1>Adicionar Nota</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="idAluno"><span>*</span>Aluno</label>
-                            <input type="number" name="idAluno" placeholder="Insira o id do aluno">
+                            <label for="curso"><span>*</span>Aluno</label>
+                            <select name="idAluno" id="idAluno" required>
+                                <option value="" selected disabled>Selecione uma aluno</option>
+                                @foreach ($alunos as $aluno)
+                                    <option value="{{ $aluno->id }}">{{ $aluno->nome }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="field-input">
-                            <label for="idMateria"><span>*</span>Materia</label>
-                            <input type="number" name="idMateria" placeholder="Insira o id da matéria">
+                            <label for="curso"><span>*</span>Materia</label>
+                            <select name="idMateria" id="idMateria" required>
+                                <option value="" selected disabled>Selecione uma materia</option>
+                                @foreach ($materias as $materia)
+                                    <option value="{{ $materia->id }}">{{ $materia->materia }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="field-input">
                             <label for="nota"><span>*</span>Nota</label>

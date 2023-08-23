@@ -19,24 +19,7 @@
         </div>
     </header>
 
-    <section>
-        <div class="form-box">
-            <main>
-                <div class="cima">
-                    <div class="box"><a href="{{ route('materiais.add') }}"><button>Adicionar Material</button></a>
-                        <div class="box"><a href="{{ route('documentos.add') }}"><button>Adicionar Documento</button></a></div>
-                        <div class="box"><a href="{{ route('alunos.add') }}"><button>Adicionar Aluno</button></a></div>
-                    </div>
-                    </div>
-                    <div class="baixo">
-                        <div class="box"><a href="{{ route('refeitorios.add') }}"><button>Adicionar Cardapio</button></a></div>
-                        <div class="box"><a href="{{ route('notas.add') }}"><button>Adicionar Notas</button></a>
-                        <div class="box"><a href="{{ route('turmas.add') }}"><button>Adicionar Turma</button></a></div>
-                        </div>
-                    </div>
-            </main>
-        </div>
-    </section>
+   
 
     @yield('content')
 </body>
