@@ -1,83 +1,29 @@
 <?php
 
-//Monolítica
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use App\Models\Turma;
-
-// class TurmasController extends Controller
-// {
-//     public function index()
-//     {
-//         return view('calendarios.index');
-//     }
-//     public function add()
-//     {
-//         return view('turmas.add');
-//     }
-//     public function addSave(Request $form)
-//     {
-
-//         $dados = $form->validate([
-//             'turma' => 'required',
-//             'numeroAlunos' => 'required',
-//             'idCurso' => 'required',
-//         ]);
-//         Turma::create($dados);
-//         return redirect()->route('turmas.add');
-//     }
-// }
-
-//API
 namespace App\Http\Controllers;
 
-use App\Models\Turma;
 use Illuminate\Http\Request;
+use App\Models\Turma;
 
 class TurmasController extends Controller
 {
     public function index()
     {
-        $turmas = Turma::all();
-        return response()->json($turmas);
+        return view('calendarios.index');
     }
-
-    public function show(Turma $turma)
+    public function add()
     {
-        return response()->json($turma);
+        return view('turmas.add');
     }
-
-    public function create(Request $request)
+    public function addSave(Request $form)
     {
-        $dados = $request->validate([
+
+        $dados = $form->validate([
             'turma' => 'required',
             'numeroAlunos' => 'required',
             'idCurso' => 'required',
         ]);
-
-        $turma = Turma::create($dados);
-
-        return response()->json($turma, 201);
-    }
-
-    public function update(Request $request, Turma $turma)
-    {
-        $dados = $request->validate([
-            'turma' => 'required',
-            'numeroAlunos' => 'required',
-            'idCurso' => 'required',
-        ]);
-
-        $turma->update($dados);
-
-        return response()->json($turma, 200);
-    }
-
-    public function delete(Turma $curso)
-    {
-        $curso->delete();
-
-        return response()->json(null, 204);
+        Turma::create($dados);
+        return redirect()->route('turmas.add');
     }
 }

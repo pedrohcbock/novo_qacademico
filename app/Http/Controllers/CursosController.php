@@ -1,74 +1,23 @@
 <?php
 
-//Monolítica
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use App\Models\Curso;
-
-// class CursosController extends Controller
-// {
-//     public function add(){
-//         return view('cursos.add');
-//     }
-//     public function addSave(Request $form)
-//     {
-
-//         $dados = $form->validate([
-//             'curso' => 'required',
-
-//         ]);
-//         Curso::create($dados);
-//         return redirect()->route('cursos.add');
-//     }
-// }
-
-//API
-
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class CursosController extends Controller
 {
-    public function index()
-    {
-        $cursos = Curso::all();
-        return response()->json($cursos);
+    public function add(){
+        return view('cursos.add');
     }
-
-    public function show(Curso $curso)
+    public function addSave(Request $form)
     {
-        return response()->json($curso);
-    }
 
-    public function create(Request $request)
-    {
-        $dados = $request->validate([
+        $dados = $form->validate([
             'curso' => 'required',
+
         ]);
-
-        $curso = Curso::create($dados);
-
-        return response()->json($curso, 201);
-    }
-
-    public function update(Request $request, Curso $curso)
-    {
-        $dados = $request->validate([
-            'curso' => 'required',
-        ]);
-
-        $curso->update($dados);
-
-        return response()->json($curso, 200);
-    }
-
-    public function delete(Curso $curso)
-    {
-        $curso->delete();
-
-        return response()->json(null, 204);
+        Curso::create($dados);
+        return redirect()->route('cursos.add');
     }
 }

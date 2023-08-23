@@ -1,131 +1,33 @@
 <?php
 
-//Monolítica
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use App\Models\Professor;
-
-// class ProfessoresController extends Controller
-// {
-//     public function add(){
-//         return view('professores.add');
-//     }
-//     public function addSave(Request $form)
-//     {
-
-//         $dados = $form->validate([
-//             'nome' => 'required',
-//             'email' => 'required',
-//             'senha' => 'required',
-//             'idMateria' => 'required',
-//         ]);
-//         Professor::create($dados);
-//         return redirect()->route('professores.add');
-//     }
-//     public function alter()
-//     {
-//         return view('professores.senha');
-//     }
-//     public function alterSave()
-//     {
-
-//     }
-// }
-
-//API
 namespace App\Http\Controllers;
 
-use App\Models\Professor;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
+use App\Models\Professor;
 
 class ProfessoresController extends Controller
 {
-    public function index()
-    {
-        $professores = Professor::all();
-        return response()->json($professores);
+    public function add(){
+        return view('professores.add');
     }
-
-    public function show(Professor $professor)
+    public function addSave(Request $form)
     {
-        return response()->json($professor);
-    }
 
-    public function create(Request $request)
-    {
-        $dados = $request->validate([
+        $dados = $form->validate([
             'nome' => 'required',
             'email' => 'required',
-            'cpf' => 'required',
-            'password' => 'required',
-            'dataNasc' => 'required',
-            'foto' => 'required',
-            'nomePai' => 'required',
-            'nomeMae' => 'required',
-            'siape' => 'required',
-            'telefone' => 'required',
-            'sexo' => 'required',
+            'senha' => 'required',
             'idMateria' => 'required',
         ]);
-
-        $dados['password'] = Hash::make($dados['password']);
-
-        $professor = Professor::create($dados);
-
-        return response()->json($professor, 201);
+        Professor::create($dados);
+        return redirect()->route('professores.add');
     }
-
-    public function update(Request $request, Professor $professor)
+    public function alter()
     {
-        $dados = $request->validate([
-            'nome' => [
-                'required',
-                Rule::unique('professores')->ignore($professor->id),
-                'min:3',
-            ],
-            'email' => 'required',
-            'dataNasc' => 'required',
-            'telefone' => 'required',
-            'nomePai' => 'required',
-            'nomeMae' => 'required',
-            'foto' => 'required',
-            'sexo' => 'required',
-        ]);
-
-        unset($dados['password']);
-
-        $professor->update($dados);
-
-        return response()->json($professor, 200);
+        return view('professores.senha');
     }
-
-    public function changePassword(Request $request, Professor $professor)
+    public function alterSave()
     {
-        $request->validate([
-            'cpf' => 'required|string',
-            'password' => 'required|confirmed',
-        ]);
 
-        $professor = Professor::where('cpf', $request->cpf)->first();
-
-        if (!$professor) {
-            return response()->json(['error' => 'Professor não encontrado.'], 422);
-        }
-
-        $professor->update([
-            'password' => Hash::make($request->password),
-        ]);
-
-        return response()->json(['message' => 'Senha alterada com sucesso'], 200);
-    }
-
-    public function delete(Professor $professor)
-    {
-        $professor->delete();
-
-        return response()->json(null, 204);
     }
 }
