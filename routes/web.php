@@ -134,7 +134,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // Refeitório
 Route::prefix('/refeitorios')->middleware("auth:admin")->group(function () {
     Route::get('add', [RefeitoriosController::class, 'add'])->name('refeitorios.add');
-    Route::post('addSave', [RefeitoriosController::class, 'addSave'])->name('refeitorios.addSave');
+    Route::post('add', [RefeitoriosController::class, 'addSave'])->name('refeitorios.addSave');
 });
 
 Route::prefix('/refeitorios')->middleware("auth:aluno")->group(function () {

@@ -15,7 +15,7 @@
     <header>
         <div class="itens">
             <h1>
-                <div class="q">Q-aca</div>dêmico
+                <div class="q">Q-aca</div> <div class="d">dêmico</div>
             </h1>
         </div>
     </header>

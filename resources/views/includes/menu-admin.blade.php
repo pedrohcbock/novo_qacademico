@@ -73,8 +73,8 @@
                     <div class="box"><a href="{{ route('refeitorios.add') }}"><button>Adicionar
                                 Cardapio</button></a></div>
                     <div class="box"><a href="{{ route('notas.add') }}"><button>Adicionar Notas</button></a>
-                        <div class="box"><a href="{{ route('turmas.add') }}"><button>Adicionar Turma</button></a>
-                        </div>
+                        <div class="box"><a href="{{ route('turmas.add') }}"><button>Adicionar Turma</button></a></div>
+                        <div class="box"><a href="{{ route('cursos.add') }}"><button>Adicionar Curso</button></a></div>
                     </div>
                 </div>
             </main>

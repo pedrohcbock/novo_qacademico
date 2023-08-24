@@ -58,7 +58,6 @@
             </div>
         </form>
     </section>
-    <script src="{{ asset('js/turma.js') }}"></script>
 
 </body>
 

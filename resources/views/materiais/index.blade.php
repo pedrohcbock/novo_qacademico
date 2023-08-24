@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    @extends('includes.header-aluno')
     <section>
         <div class="sub_titulo">
             <h1 class="sub">Solicitar Documentos</h1>

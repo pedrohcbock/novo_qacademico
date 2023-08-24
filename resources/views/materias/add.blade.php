@@ -27,6 +27,5 @@
         </form>
     </div>
 
-    <script src="{{asset("js/materia.js")}}"></script>
 </body>
 </html>
