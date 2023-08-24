@@ -131,13 +131,13 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Documentos
+// Refeitório
 Route::prefix('/refeitorios')->middleware("auth:admin")->group(function () {
     Route::get('add', [RefeitoriosController::class, 'add'])->name('refeitorios.add');
-
+    Route::post('addSave', [RefeitoriosController::class, 'addSave'])->name('refeitorios.addSave');
 });
 
 Route::prefix('/refeitorios')->middleware("auth:aluno")->group(function () {
-    Route::get('cardapio', [RefeitoriosController::class, 'cardapio'])->name('refeitorios.cardapio');
-    Route::get('view', [RefeitoriosController::class, 'view'])->name('refeitorios.view');
+    Route::get('index', [RefeitoriosController::class, 'index'])->name('refeitorios.index');
+
 });

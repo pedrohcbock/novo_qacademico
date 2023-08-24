@@ -11,17 +11,29 @@
 </head>
 
 <body>
-    @extends('includes.header-admin')
-    <div class="container">
-        <h1>Novo Cardápio</h1>
-        <form id="menuForm">
-            <label for="week">Semana:</label>
-            <input type="week" id="week" name="week" required>
-            <label for="menu">Cardápio:</label>
-            <textarea id="menu" name="menu" rows="6" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <form method="post" action="{{ route('refeitorios.addSave') }}">
+        @csrf
+        <label for="data_inicial">Data Inicial:</label>
+        <input type="date" name="data_inicial" required>
+        <br>
+
+        <label for="data_final">Data Final:</label>
+        <input type="date" name="data_final" required>
+        <br>
+
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao" rows="4" required></textarea>
+        <br>
+
+        <button type="submit">Adicionar Cardápio</button>
+    </form>
 
 
 </body>

@@ -35,8 +35,8 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('refeitorios.view') }}"><ion-icon name="today-outline"></ion-icon>
-                    <p>refeitório</p>
+                <a href="{{ route('refeitorios.index') }}"><ion-icon name="today-outline"></ion-icon>
+                    <p>Refeitório</p>
                 </a>
             </li>
         </ul>
@@ -66,7 +66,7 @@
                     <div class="box"><a href="{{ route('materiais.index') }}"><button>Materiais de Apoio</button></a>
                     </div>
                     <div class="box"><a href="{{ route('notas.index') }}"><button>Nota</button></a></div>
-                    <div class="box"><a href="{{ route('refeitorios.view') }}"><button>Cardapio</button></a></div>
+                    <div class="box"><a href="{{ route('refeitorios.index') }}"><button>Cardapio</button></a></div>
                 </div>
             </main>
         </div>

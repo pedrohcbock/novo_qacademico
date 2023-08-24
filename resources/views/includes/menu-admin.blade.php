@@ -41,7 +41,7 @@
             </li>
             <li>
                 <a href="{{ route('refeitorios.add') }}"><ion-icon name="today-outline"></ion-icon>
-                    <p> Refeitório</p>
+                    <p> Cardápio</p>
                 </a>
             </li>
         </ul>

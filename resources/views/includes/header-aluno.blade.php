@@ -44,8 +44,8 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('refeitorios.view') }}"><ion-icon name="today-outline"></ion-icon>
-                    <p>refeitório</p>
+                <a href="{{ route('refeitorios.index') }}"><ion-icon name="today-outline"></ion-icon>
+                    <p>Refeitório</p>
                 </a>
             </li>
         </ul>
