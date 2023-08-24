@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset("style/materia.css")}}">
+    <link rel="stylesheet" href="{{ asset('style/materia.css') }}">
     <title>Adicionar Matéria</title>
 </head>
+
 <body>
+    @extends('includes.header-admin')
     <div class="container">
         <h1>Adicionar Matéria</h1>
-        <form id="materiaForm">
-            <input type="hidden" id="materiaId" name="materiaId">
-
-            <label for="nomeMateria">Nome da Matéria:</label>
-            <input type="text" id="nomeMateria" name="nomeMateria" required>
-
-            <h2>Cursos Disponíveis:</h2>
-            <div class="curso-list">
-                <label><input type="checkbox" name="curso[]" value="1"> Curso A</label>
-                <label><input type="checkbox" name="curso[]" value="2"> Curso B</label>
-                <label><input type="checkbox" name="curso[]" value="3"> Curso C</label>
-
+        <form id="cursoForm" action="{{ route('materias.addSave') }}" method="POST">
+            @csrf
+            <div class="field-input">
+                <label for="curso">Nome da Matéria:</label>
+                <input type="text" name="materia" id="materia" required>
+            </div>
+            <div class="field-input">
+                <label for="curso">Carga Horária:</label>
+                <input type="text" name="cargaHoraria" id="cargaHoraria" required>
             </div>
 
-            <button type="submit">Adicionar Matéria</button>
+            <div class="btn">
+                <button type="submit" id="submit-btn">
+                    Cadastrar materia
+                </button>
+            </div>
         </form>
     </div>
 
 </body>
+
 </html>

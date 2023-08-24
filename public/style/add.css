@@ -52,7 +52,7 @@ label span{
 }
 
 .form{
-    width: min(100%, 25rem);
+    margin-top: 100px;
     display: grid;
     gap: 1rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

@@ -20,7 +20,7 @@
     <section id="signup">
         <form method="post" action="{{ route('refeitorios.addSave') }}">
             @csrf
-            <h1>Cadastro de Turma</h1>
+            <h1>Adicionar Cardápio</h1>
             <label for="data_inicial">Data Inicial:</label>
             <input type="date" name="data_inicial" required>
             <br>
@@ -33,7 +33,11 @@
             <textarea name="descricao" rows="4" required></textarea>
             <br>
 
-            <button type="submit">Adicionar Cardápio</button>
+            <div class="btn">
+                <button type="submit" id="submit-btn">
+                    Adicionar cardápio
+                </button>
+            </div>
         </form>
     </section>
 

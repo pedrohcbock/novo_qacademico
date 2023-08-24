@@ -21,7 +21,7 @@
 
             <div class="btn">
                 <button type="submit" id="submit-btn">
-                    Cadastrar Curso
+                    Cadastrar curso
                 </button>
             </div>
         </form>
