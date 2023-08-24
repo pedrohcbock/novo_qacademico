@@ -38,12 +38,12 @@
                     <h1>Adicionar Documento</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="tipo_documento" class="tipodoc"><span>*</span>Arquivo</label>
-                            <input type="file" id="arquivo" name="arquivo" required>
+                            <label for="nomeArquivo" class="tipodoc"><span>*</span>Arquivo</label>
+                            <input type="file" id="nomeArquivo" name="nomeArquivo" required>
                         </div>
                         <div class="field-input">
                             <label for="curso"><span>*</span>Tipo</label>
-                            <select id="tipo_documento" class="seleciona" name="tipo_documento" required>
+                            <select id="tipo" class="seleciona" name="tipo" required>
                                 <option value="Atestado de Matricula">Atestado de Matricula</option>
                                 <option value="Boletim">Boletim</option>
                                 <option value="Histórico Escolar">Histórico Escolar</option>

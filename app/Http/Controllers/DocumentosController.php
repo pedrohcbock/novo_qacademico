@@ -14,20 +14,24 @@ class DocumentosController extends Controller
 
     public function addSave(Request $request)
     {
-        $request->validate([
-            'tipo_documento' => 'required',
-            'arquivo' => 'required|mimes:pdf|max:2048',
-        ]);
+        if ($request->hasFile('nomeArquivo')) {
+            $request->validate([
+                'tipo' => 'required',
+                'nomeArquivo' => 'required|mimes:pdf|max:2048',
+            ]);
 
-        $arquivoNome = time() . '.' . $request->arquivo->getClientOriginalExtension();
-        $request->arquivo->move(public_path('uploads'), $arquivoNome);
+            $arquivoNome = time() . '.' . $request->file('nomeArquivo')->getClientOriginalExtension();
+            $request->file('nomeArquivo')->move(public_path('uploads'), $arquivoNome);
 
-        $documento = new Documento();
-        $documento->tipo = $request->tipo_documento;
-        $documento->nomeArquivo = $arquivoNome;
-        $documento->save();
+            $documento = new Documento();
+            $documento->tipo = $request->tipo;
+            $documento->nomeArquivo = $arquivoNome;
+            $documento->save();
 
-        return redirect()->route('documentos.add')->with('success', 'Documento enviado com sucesso.');
+            return redirect()->route('documentos.add')->with('success', 'Documento enviado com sucesso.');
+        } else {
+            return redirect()->route('documentos.add')->with('error', 'Erro ao enviar o arquivo.');
+        }
     }
 
     public function index()
