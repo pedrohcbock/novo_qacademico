@@ -1,4 +1,4 @@
-@extends('includes.menu-aluno')
+@extends('includes.header-aluno')
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
     <table class="notas_aluno">
         <thead>
             <tr>
-                <th>Matéria   </th>
+                <th>Matéria</th>
                 <th>Nota</th>
             </tr>
         </thead>

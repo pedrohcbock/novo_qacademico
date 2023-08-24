@@ -1,32 +1,33 @@
-*{
- margin: 0;
- padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
-h1.titulo_notas{
+
+h1.titulo_notas {
     display: flex;
     justify-content: center;
     margin-top: 10%;
     color: rgb(102, 101, 101);
-}
-
-table.notas_aluno{
-
-        width: min(100%, 25rem);
-        display: grid;
-        gap: 1rem;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        padding: 3.125rem;
-        border-radius: 8px;
-        isolation: isolate;
-        background: #fff;
-        margin-top: 5%;
-        margin-left: 40%;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: 900;
-
 
 }
 
-table.notas_aluno thead tr th.materia{
+table.notas_aluno {
+
+    width: min(100%, 25rem);
+    gap: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 3.125rem;
+    border-radius: 8px;
+    isolation: isolate;
+    background: #fff;
+    margin-top: 5%;
+    margin-left: 40%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    display: flexbox;
+
+}
+
+table.notas_aluno thead tr th.materia {
     margin-right: 100%;
 }
