@@ -15,7 +15,7 @@ class TurmasController extends Controller
     public function add()
     {
         $cursos = Curso::all();
-        return view('turmas.add', compact('cursos'));;
+        return view('turmas.add', compact('cursos'));
     }
     public function addSave(Request $form)
     {

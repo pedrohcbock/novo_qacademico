@@ -19,6 +19,6 @@ class CursosController extends Controller
 
         ]);
         Curso::create($dados);
-        return redirect()->route('cursos.add');
+        return redirect()->route('includes.header-admin');
     }
 }

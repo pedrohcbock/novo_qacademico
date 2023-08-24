@@ -15,7 +15,7 @@ class DocumentosController extends Controller
     {
         $request->validate([
             'tipo_documento' => 'required',
-            'arquivo' => 'required|mimes:pdf|max:2048', // Aceita apenas arquivos PDF com no máximo 2MB
+            'arquivo' => 'required|mimes:pdf|max:2048',
         ]);
 
         $arquivoNome = time() . '.' . $request->arquivo->getClientOriginalExtension();

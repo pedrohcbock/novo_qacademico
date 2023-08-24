@@ -27,7 +27,7 @@ class AdminsController extends Controller
 
         event(new Registered($admin));
 
-        return redirect()->route('includes.header')->with('success', 'Admin cadastrado com sucesso!');
+        return redirect()->route('includes.header-admin')->with('success', 'Admin cadastrado com sucesso!');
     }
 
     public function newPassword()

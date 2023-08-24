@@ -8,17 +8,18 @@
     <title>Adicionar Aluno</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="../style/add.css">
     <script src="../js/add.js" defer></script>
 </head>
 
 <body>
-    @extends('includes.menu-admin')
-    @if ($errors)
-        @foreach ($errors->all() as $err)
-            {{ $err }}<br>
-        @endforeach
+    @extends('includes.header-admin')
+    @if (session('sucesso'))
+        <div class="alert alert-success">
+            {{ session('sucesso') }}
+        </div>
     @endif
 
     <section id="signup">
@@ -102,7 +103,8 @@
                         </div>
                         <div class="field-input">
                             <label for="data"><span>*</span>Data de Nascimento</label>
-                            <input value="{{ old('dataNasc', $aluno->dataNasc ?? '') }}" type="date" name="dataNasc">
+                            <input value="{{ old('dataNasc', $aluno->dataNasc ?? '') }}" type="date"
+                                name="dataNasc">
                         </div>
                         <div class="field-input">
                             <label for="sexo"><span>*</span>Gênero</label>
@@ -114,14 +116,22 @@
 
                         <div class="field-input">
                             <label for="idTurma"><span>*</span>IdTurma</label>
-                            <input value="{{ old('idTurma', $aluno->idTurma ?? '') }}" type="number" name="idTurma"
-                                placeholder="3º Info">
+                            <select name="idTurma" id="idTurma" required>
+                                <option value="" selected disabled>Selecione uma turma</option>
+                                @foreach ($turmas as $turma)
+                                    <option value="{{ $turma->id }}">{{ $turma->turma }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="field-input">
                             <label for="idCurso"><span>*</span>IdCurso</label>
-                            <input value="{{ old('idCurso', $aluno->idCurso ?? '') }}" type="number" name="idCurso"
-                                placeholder="Informática">
+                            <select name="idCurso" id="idCurso" required>
+                                <option value="" selected disabled>Selecione um curso</option>
+                                @foreach ($cursos as $curso)
+                                    <option value="{{ $curso->id }}">{{ $curso->curso }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="btn">

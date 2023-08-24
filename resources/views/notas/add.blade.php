@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @extends('includes.menu-admin')
+    @extends('includes.header-admin')
     @if ($errors)
         @foreach ($errors->all() as $err)
             {{ $err }}<br>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="btn">
                         <button type="submit" id="submit-btn">
-                            Enviar nota
+                            Atribuir nota
                         </button>
                     </div>
                 </div>

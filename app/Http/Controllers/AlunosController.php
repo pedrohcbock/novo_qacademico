@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aluno;
+use App\Models\Curso;
+use App\Models\Turma;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
@@ -17,11 +19,12 @@ class AlunosController extends Controller
     }
     public function add()
     {
-        return view('alunos.add');
+        $cursos = Curso::all();
+        $turmas = Turma::all();
+        return view('alunos.add', compact('cursos', 'turmas'));
     }
     public function addSave(Request $form)
     {
-        //dd($form); -> Vardump e die
         $dados = $form->validate([
             'nome' => 'required',
             'email' => 'required',
@@ -44,7 +47,7 @@ class AlunosController extends Controller
 
         event(new Registered($aluno));
 
-        return redirect()->route('includes.header-admin')->with('success', 'Aluno cadastrado com sucesso!');
+        return redirect()->route('alunos.add')->with('sucesso', 'Aluno cadastrado com sucesso');
     }
 
     public function newPassword()

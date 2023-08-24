@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @extends('includes.menu-admin')
+    @extends('includes.header-admin')
     <div class="container">
         <h1>Novo Cardápio</h1>
         <form id="menuForm">

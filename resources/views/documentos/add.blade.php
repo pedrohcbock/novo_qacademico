@@ -9,13 +9,14 @@
     <title>Adicionar Aluno</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="../style/add.css">
     <script src="../js/add.js" defer></script>
 </head>
 
 <body>
-    @extends('includes.menu-admin')
+    @extends('includes.header-admin')
     @if ($errors)
         @foreach ($errors->all() as $err)
             {{ $err }}<br>
@@ -34,14 +35,14 @@
             </div>
             <div class="pages">
                 <div class="page active">
-                    <h1>Cadastro de Turma</h1>
+                    <h1>Adicionar Documento</h1>
                     <div class="field">
                         <div class="field-input">
                             <label for="tipo_documento" class="tipodoc"><span>*</span>Arquivo</label>
                             <input type="file" id="arquivo" name="arquivo" required>
                         </div>
                         <div class="field-input">
-                            <label for="curso"><span>*</span>Curso</label>
+                            <label for="curso"><span>*</span>Tipo</label>
                             <select id="tipo_documento" class="seleciona" name="tipo_documento" required>
                                 <option value="Atestado de Matricula">Atestado de Matricula</option>
                                 <option value="Boletim">Boletim</option>
@@ -51,8 +52,7 @@
                     </div>
                     <div class="btn">
                         <button type="submit" id="submit-btn">
-                            Cadastrar turma
-                        </button>
+                            Adicionar documento </button>
                     </div>
                 </div>
             </div>

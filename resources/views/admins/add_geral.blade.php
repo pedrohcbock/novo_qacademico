@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    @extends('includes.menu-admin')
+    @extends('includes.header-admin')
     @if ($errors)
         @foreach ($errors->all() as $err)
             {{ $err }}<br>

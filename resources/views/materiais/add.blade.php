@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    @extends('includes.menu-admin')
+    @extends('includes.header-admin')
     @if ($errors)
         @foreach ($errors->all() as $err)
             {{ $err }}<br>
@@ -37,11 +37,11 @@
                     <h1>Adicionar Material</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="tipo_documento" class="tipodoc"><span>*</span>material</label>
+                            <label for="tipo_documento" class="tipodoc"><span>*</span>Material</label>
                             <input type="file" id="material" name="material" required>
                         </div>
                         <div class="field-input">
-                            <label for="curso"><span>*</span>Curso</label>
+                            <label for="curso"><span>*</span>Tipo</label>
                             <select id="tipo_material" class="seleciona" name="tipo_material" required>
                                 <option value="Atividade">Atividade</option>
                                 <option value="Apoio">Apoio</option>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="btn">
                         <button type="submit" id="submit-btn">
-                            Cadastrar turma
+                            Adicionar material
                         </button>
                     </div>
                 </div>
