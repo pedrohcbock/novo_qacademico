@@ -13,20 +13,24 @@ class MateriaisController extends Controller
 
     public function addSave(Request $request)
     {
-        $request->validate([
-            'tipo_material' => 'required',
-            'material' => 'required|mimes:pdf|max:2048',
-        ]);
+        if ($request->hasFile('nomeMaterial')) {
+            $request->validate([
+                'tipo' => 'required',
+                'nomeMaterial' => 'required|mimes:pdf|max:2048',
+            ]);
 
-        $arquivoNome = time() . '.' . $request->material->getClientOriginalExtension();
-        $request->material->move(public_path('uploads'), $arquivoNome);
+            $materialNome = time() . '.' . $request->file('nomeMaterial')->getClientOriginalExtension();
+            $request->file('nomeMaterial')->move(public_path('uploads'), $materialNome);
 
-        $material = new Material();
-        $material->tipo = $request->tipo_material;
-        $material->nomeMaterial = $arquivoNome;
-        $material->save();
+            $material = new Material();
+            $material->tipo = $request->tipo;
+            $material->nomeMaterial = $materialNome;
+            $material->save();
 
-        return redirect()->route('materiais.add')->with('success', 'Material enviado com sucesso.');
+            return redirect()->route('materiais.add')->with('success', 'Material enviado com sucesso.');
+        } else {
+            return redirect()->route('materiais.add')->with('error', 'Erro ao enviar o material.');
+        }
     }
 
     public function index()

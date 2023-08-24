@@ -37,12 +37,12 @@
                     <h1>Adicionar Material</h1>
                     <div class="field">
                         <div class="field-input">
-                            <label for="tipo_documento" class="tipodoc"><span>*</span>Material</label>
-                            <input type="file" id="material" name="material" required>
+                            <label for="nomeMaterial" class="tipodoc"><span>*</span>Material</label>
+                            <input type="file" id="nomeMaterial" name="nomeMaterial" required>
                         </div>
                         <div class="field-input">
-                            <label for="curso"><span>*</span>Tipo</label>
-                            <select id="tipo_material" class="seleciona" name="tipo_material" required>
+                            <label for="tipo"><span>*</span>Tipo</label>
+                            <select id="tipo" class="seleciona" name="tipo" required>
                                 <option value="Atividade">Atividade</option>
                                 <option value="Apoio">Apoio</option>
                                 <option value="Recuperação">Recuperação</option>
