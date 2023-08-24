@@ -86,8 +86,11 @@ Route::prefix('/turmas')->middleware("auth:admin")->group(function () {
 });
 
 //Calendário
-Route::prefix('/calendarios')->group(function () {
-    Route::get('index', [CalendariosController::class, 'index'])->name('calendarios.index');
+Route::prefix('/calendarios')->middleware("auth:admin")->group(function () {
+    Route::get('indexAluno', [CalendariosController::class, 'indexAluno'])->name('calendarios.indexAluno');
+});
+Route::prefix('/calendarios')->middleware("auth:admin")->group(function () {
+    Route::get('indexAdmin', [CalendariosController::class, 'indexAdmin'])->name('calendarios.indexAdmin');
 });
 
 // Documentos

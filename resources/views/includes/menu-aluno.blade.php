@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('calendarios.index') }}"><ion-icon name="today-outline"></ion-icon>
+                <a href="{{ route('calendarios.indexAdmin') }}"><ion-icon name="today-outline"></ion-icon>
                     <p>Calendário</p>
                 </a>
             </li>
@@ -57,7 +57,7 @@
         <div class="form-box">
             <main>
                 <div class="cima">
-                    <div class="box"><a href="{{ route('calendarios.index') }}"><button>Calendário
+                    <div class="box"><a href="{{ route('calendarios.indexAluno') }}"><button>Calendário
                                 Acadêmico</button></a></div>
                     <div class="box"><a href="{{ route('documentos.index') }}"><button>Solicitar
                                 Documento</button></a></div>

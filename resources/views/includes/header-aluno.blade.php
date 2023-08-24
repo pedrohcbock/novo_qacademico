@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('calendarios.index') }}"><ion-icon name="today-outline"></ion-icon>
+                <a href="{{ route('calendarios.indexAluno') }}"><ion-icon name="today-outline"></ion-icon>
                     <p>Calendário</p>
                 </a>
             </li>
