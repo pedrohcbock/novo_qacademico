@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -40,18 +41,5 @@ class DocumentosController extends Controller
         $documento = Documento::findOrFail($id);
         $filePath = public_path('uploads/' . $documento->nomeArquivo);
         return response()->download($filePath, $documento->tipo . '.pdf');
-    }
-
-    public function filtrar(Request $request)
-    {
-        $filtroTipo = $request->input('filtro_tipo');
-
-        if ($filtroTipo) {
-            $documentos = Documento::where('tipo', $filtroTipo)->get();
-        } else {
-            $documentos = Documento::all();
-        }
-
-        return view('documentos.index', compact('documentos'));
     }
 }

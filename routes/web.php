@@ -100,7 +100,6 @@ Route::prefix('/documentos')->middleware("auth:aluno")->group(function () {
     Route::get('index', [DocumentosController::class, 'index'])->name('documentos.index');
     Route::post('upload', [DocumentosController::class, 'upload'])->name('documentos.upload');
     Route::get('download/{id}', [DocumentosController::class, 'download'])->name('documentos.download');
-    Route::get('filtrar', [DocumentosController::class, 'filtrar'])->name('documentos.filtrar');
 });
 
 // Materiais
@@ -113,7 +112,6 @@ Route::prefix('/materiais')->middleware("auth:aluno")->group(function () {
     Route::get('index', [MateriaisController::class, 'index'])->name('materiais.index');
     Route::post('upload', [MateriaisController::class, 'upload'])->name('materiais.upload');
     Route::get('download/{id}', [MateriaisController::class, 'download'])->name('materiais.download');
-    Route::get('filtrar', [MateriaisController::class, 'filtrar'])->name('materiais.filtrar');
 });
 
 

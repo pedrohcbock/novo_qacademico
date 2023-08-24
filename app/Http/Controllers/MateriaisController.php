@@ -46,17 +46,4 @@ class MateriaisController extends Controller
             return redirect()->route('materiais.index')->with('error', 'Arquivo não encontrado.');
         }
     }
-
-    public function filtrar(Request $request)
-    {
-        $filtroTipo = $request->input('filtro_tipo');
-
-        if ($filtroTipo) {
-            $materiais = Material::where('tipo', $filtroTipo)->get();
-        } else {
-            $materiais = Material::all();
-        }
-
-        return view('documentos.index', compact('documentos'));
-    }
 }
