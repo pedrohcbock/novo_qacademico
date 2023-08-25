@@ -25,7 +25,7 @@ class NotasController extends Controller
             'nota' => 'required',
         ]);
         Nota::create($dados);
-        return redirect()->route('notas.add');
+        return redirect()->route('includes.header-admin');
     }
 
     public function index()

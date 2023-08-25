@@ -28,9 +28,7 @@ class DocumentosController extends Controller
             $documento->nomeArquivo = $arquivoNome;
             $documento->save();
 
-            return redirect()->route('documentos.add')->with('success', 'Documento enviado com sucesso.');
-        } else {
-            return redirect()->route('documentos.add')->with('error', 'Erro ao enviar o arquivo.');
+            return redirect()->route('includes.header-admin')->with('success', 'Documento enviado com sucesso.');
         }
     }
 

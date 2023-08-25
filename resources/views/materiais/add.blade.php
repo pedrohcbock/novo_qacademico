@@ -9,18 +9,20 @@
     <title>Adicionar Aluno</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="../style/add.css">
     <script src="../js/add.js" defer></script>
 </head>
 
 <body>
     @extends('includes.header-admin')
-    @if ($errors)
-        @foreach ($errors->all() as $err)
-            {{ $err }}<br>
-        @endforeach
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
     @endif
+
 
     <section id="signup">
         <form action="{{ route('materiais.addSave') }}" method="POST" class="form" enctype="multipart/form-data">

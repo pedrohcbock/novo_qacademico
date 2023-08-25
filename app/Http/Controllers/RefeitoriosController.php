@@ -20,7 +20,7 @@ class RefeitoriosController extends Controller
             'descricao' => 'required',
         ]);
         Refeitorio::create($dados);
-        return redirect()->route('refeitorios.add')->with('success', 'Cardápio adicionado com sucesso.');
+        return redirect()->route('includes.header-admin')->with('success', 'Cardápio adicionado com sucesso.');
     }
 
     public function index(){

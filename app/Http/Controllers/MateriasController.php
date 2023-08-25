@@ -20,6 +20,6 @@ class MateriasController extends Controller
 
         ]);
         Materia::create($dados);
-        return redirect()->route('materias.add');
+        return redirect()->route('includes.header-admin');
     }
 }

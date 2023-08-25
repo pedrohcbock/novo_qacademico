@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -27,9 +28,7 @@ class MateriaisController extends Controller
             $material->nomeMaterial = $materialNome;
             $material->save();
 
-            return redirect()->route('materiais.add')->with('success', 'Material enviado com sucesso.');
-        } else {
-            return redirect()->route('materiais.add')->with('error', 'Erro ao enviar o material.');
+            return redirect()->route('includes.header-admin')->with('success', 'Material enviado com sucesso.');
         }
     }
 
